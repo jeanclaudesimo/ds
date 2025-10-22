@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   FaLinkedinIn,
@@ -7,6 +9,7 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import Logo from "@/components/ui/Logo";
 
 const footerLinks = {
   services: [
@@ -43,10 +46,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-2">
-                <span className="gradient-text">Digital</span>
-                <span className="text-white">Solutions</span>
-              </h3>
+              <Logo size="md" className="mb-4" />
               <p className="text-gray-400 text-sm">
                 Ihr Partner für digitale Transformation und innovative Weblösungen.
               </p>
@@ -133,7 +133,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {currentYear} DigitalSolutions. Alle Rechte vorbehalten.
+            © {currentYear} Digitalssolutions. Alle Rechte vorbehalten.
           </p>
 
           {/* Social Links */}
