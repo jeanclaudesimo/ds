@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "cv": "CV",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "about": "À propos",
+    "cta": "Consultation gratuite"
+  },
+  "hero": {
+    "title": "Claude Simo",
+    "subtitle": "Digitalssolutions",
+    "tagline": "Développeur Full-Stack PHP & Ingénieur DevOps",
+    "description": "Spécialisé en Laravel, Symfony, React et Next.js. Je transforme vos idées numériques en solutions web innovantes.",
+    "cta": "Démarrer un projet",
+    "contact": "Nous contacter"
+  },
+  "features": {
+    "title": "Pourquoi travailler avec moi?",
+    "modern": {
+      "title": "Technologies modernes",
+      "description": "Utilisation des derniers frameworks et meilleures pratiques"
+    },
+    "fast": {
+      "title": "Développement rapide",
+      "description": "Méthodes agiles pour une mise en œuvre efficace des projets"
+    },
+    "scalable": {
+      "title": "Solutions évolutives",
+      "description": "Architectures qui grandissent avec votre entreprise"
+    },
+    "support": {
+      "title": "Support 24/7",
+      "description": "Assistance et maintenance continues"
+    }
+  },
+  "stats": {
+    "projects": "Projets",
+    "clients": "Clients satisfaits",
+    "experience": "Années d'expérience",
+    "technologies": "Technologies"
+  },
+  "services": {
+    "title": "Mes services",
+    "subtitle": "Solutions sur mesure pour vos besoins",
+    "web": {
+      "title": "Développement web",
+      "description": "Sites web modernes et responsives avec PHP, Laravel et Symfony"
+    },
+    "landing": {
+      "title": "Pages de destination",
+      "description": "Landing pages optimisées pour un maximum de conversions"
+    },
+    "apps": {
+      "title": "Applications web",
+      "description": "Applications web personnalisées pour votre entreprise"
+    },
+    "ecommerce": {
+      "title": "E-Commerce",
+      "description": "Solutions de boutique en ligne performantes"
+    },
+    "devops": {
+      "title": "DevOps",
+      "description": "CI/CD, Docker, Kubernetes et infrastructure cloud"
+    },
+    "consulting": {
+      "title": "Conseil",
+      "description": "Conseil technique et conception d'architecture"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Parlons de votre projet",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "info": "Informations de contact",
+    "phone": "Téléphone",
+    "whatsapp": "Écrire sur WhatsApp"
+  },
+  "footer": {
+    "description": "Votre partenaire pour la transformation digitale et des solutions web innovantes.",
+    "services": "Services",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "rights": "Tous droits réservés.",
+    "impressum": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "CGV"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Développeur Full-Stack & Ingénieur DevOps",
+    "download": "Télécharger le CV",
+    "skills": "Compétences",
+    "experience": "Expérience professionnelle",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "backend": "Développement Backend",
+    "frontend": "Développement Frontend",
+    "devops": "DevOps & Cloud",
+    "databases": "Bases de données"
+  },
+  "cookies": {
+    "title": "Paramètres des cookies",
+    "message": "Nous utilisons des cookies pour améliorer votre expérience sur notre site web. En utilisant notre site, vous acceptez l'utilisation de cookies. Pour plus d'informations, consultez notre",
+    "privacy": "politique de confidentialité",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "common": {
+    "readMore": "En savoir plus",
+    "backHome": "Retour à l'accueil",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite"
+  }
+}
