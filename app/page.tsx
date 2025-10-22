@@ -106,13 +106,19 @@ export default function Home() {
     <div className="bg-black">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80"
+            alt="PC Bildschirm mit Code"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70 z-10" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse z-20" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000 z-20" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-32 text-center">
+        <div className="relative z-30 max-w-7xl mx-auto px-6 py-32 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,45 +128,43 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full"
+              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full backdrop-blur-sm"
             >
               <span className="text-blue-400 font-medium">
-                🚀 Ihr Partner für digitale Transformation
+                💻 Senior Full-Stack PHP Developer | Laravel & Symfony | DevOps
               </span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Innovative Weblösungen
+              Claude Simo
               <br />
-              für Ihr{" "}
-              <span className="gradient-text">digitales Wachstum</span>
+              <span className="gradient-text">Digital Solutions</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              Wir transformieren Ihre digitalen Ideen in erfolgreiche
-              Online-Präsenzen mit modernsten Technologien und
-              professionellem Design.
+              Professionelle Webentwicklung mit PHP, Laravel, Symfony, DevOps und modernen Technologien.
+              Von der Konzeption bis zum Deployment.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/cv">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center gap-2"
                 >
-                  Projekt starten
+                  Lebenslauf ansehen
                   <FaArrowRight className="w-4 h-4" />
                 </motion.button>
               </Link>
 
-              <Link href="/portfolio">
+              <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-semibold text-lg hover:border-zinc-700 transition-colors"
                 >
-                  Portfolio ansehen
+                  Kontakt aufnehmen
                 </motion.button>
               </Link>
             </div>
@@ -249,7 +253,7 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className="p-8 bg-zinc-900 rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all"
               >
-                <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-700 to-blue-400 rounded-xl flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
@@ -326,7 +330,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-2"
               >
                 Alle Services ansehen
                 <FaArrowRight className="w-4 h-4" />
@@ -360,7 +364,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
+                className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
                 Kostenlose Beratung vereinbaren
                 <FaArrowRight className="w-5 h-5" />

@@ -120,7 +120,7 @@ export default function PortfolioPage() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full"
+              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
                 💼 Erfolgreiche Projekte
@@ -155,7 +155,7 @@ export default function PortfolioPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
                   activeCategory === category
-                    ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/50"
+                    ? "bg-gradient-to-r from-blue-700 to-blue-400 text-white shadow-lg shadow-blue-500/50"
                     : "bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800"
                 }`}
               >
@@ -332,7 +332,7 @@ export default function PortfolioPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
+                className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
                 Projekt besprechen
                 <FaArrowRight className="w-5 h-5" />

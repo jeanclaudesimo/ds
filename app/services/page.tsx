@@ -191,7 +191,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full"
+              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
                 🎯 Maßgeschneiderte Lösungen
@@ -229,7 +229,7 @@ export default function ServicesPage() {
                 className="p-8 bg-black rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all"
               >
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-700 to-blue-400 rounded-xl flex items-center justify-center">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   <span className="text-blue-400 font-semibold text-lg">
@@ -277,7 +277,7 @@ export default function ServicesPage() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center justify-center gap-2"
+                    className="w-full px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center justify-center gap-2"
                   >
                     Anfrage stellen
                     <FaArrowRight className="w-4 h-4" />
@@ -387,7 +387,7 @@ export default function ServicesPage() {
                 whileHover={{ y: -5 }}
                 className="p-6 bg-black rounded-xl border border-zinc-800 hover:border-zinc-700 transition-all text-center"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
@@ -422,7 +422,7 @@ export default function ServicesPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
+                className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
                 Kostenlose Beratung anfragen
                 <FaArrowRight className="w-5 h-5" />

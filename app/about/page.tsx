@@ -40,28 +40,10 @@ const values = [
 
 const team = [
   {
-    name: "Max Mustermann",
-    role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    description: "10+ Jahre Erfahrung in Webentwicklung und digitaler Transformation.",
-  },
-  {
-    name: "Anna Schmidt",
-    role: "Lead Designer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    description: "Spezialisiert auf UX/UI Design und moderne Designsysteme.",
-  },
-  {
-    name: "Tom Weber",
-    role: "Senior Developer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
-    description: "Full-Stack Experte mit Fokus auf Performance und Skalierbarkeit.",
-  },
-  {
-    name: "Lisa Müller",
-    role: "Project Manager",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-    description: "Koordiniert Projekte und sorgt für pünktliche Lieferung.",
+    name: "Claude Simo",
+    role: "Founder & Senior Full-Stack Developer",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
+    description: "Senior Full-Stack PHP Developer & DevOps Engineer mit Expertise in Laravel, Symfony und Cloud-Technologien. 5+ Jahre Erfahrung in der Entwicklung skalierbarer Web-Applikationen.",
   },
 ];
 
@@ -118,7 +100,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full"
+              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
                 🌟 Über uns
@@ -175,25 +157,28 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Unsere <span className="gradient-text">Geschichte</span>
+                Meine <span className="gradient-text">Geschichte</span>
               </h2>
               <div className="space-y-4 text-gray-400">
                 <p>
-                  DigitalSolutions wurde 2019 mit der Vision gegründet,
-                  Unternehmen durch innovative digitale Lösungen zum Erfolg zu
-                  verhelfen. Was als kleines Team in Gummersbach begann, hat
-                  sich zu einer etablierten Agentur entwickelt.
+                  Als Full-Stack PHP Developer und DevOps Engineer habe ich
+                  DigitalSolutions 2019 gegründet, um Unternehmen durch
+                  innovative digitale Lösungen zum Erfolg zu verhelfen. Mit
+                  einer Leidenschaft für sauberen Code und effiziente Systeme
+                  entwickle ich maßgeschneiderte Weblösungen.
                 </p>
                 <p>
                   Mit über 50 erfolgreich abgeschlossenen Projekten und 30
-                  zufriedenen Kunden haben wir bewiesen, dass Qualität und
-                  Kundenzufriedenheit unsere höchste Priorität sind.
+                  zufriedenen Kunden habe ich bewiesen, dass Qualität,
+                  Performance und Kundenzufriedenheit meine höchste Priorität
+                  sind. Von Laravel-Anwendungen bis zu komplexen Cloud-Deployments.
                 </p>
                 <p>
-                  Heute arbeiten wir mit modernsten Technologien und einem
-                  erfahrenen Team, um digitale Visionen in die Realität
-                  umzusetzen. Unser Fokus liegt auf langfristigen
-                  Partnerschaften und nachhaltigen Lösungen.
+                  Heute arbeite ich mit modernsten Technologien wie PHP/Laravel/Symfony,
+                  Docker, Kubernetes und modernen JavaScript-Frameworks, um
+                  digitale Visionen in die Realität umzusetzen. Mein Fokus
+                  liegt auf skalierbaren, wartbaren Lösungen und langfristigen
+                  Partnerschaften.
                 </p>
               </div>
             </motion.div>
@@ -212,7 +197,7 @@ export default function AboutPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-3xl opacity-50" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-blue-700 to-blue-400 rounded-2xl blur-3xl opacity-50" />
             </motion.div>
           </div>
         </div>
@@ -256,7 +241,7 @@ export default function AboutPage() {
                 whileHover={{ y: -5 }}
                 className="p-8 bg-black rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-700 to-blue-400 rounded-xl flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
@@ -324,13 +309,13 @@ export default function AboutPage() {
               variants={itemVariants}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Unser <span className="gradient-text">Team</span>
+              Der <span className="gradient-text">Gründer</span>
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-gray-400 max-w-2xl mx-auto"
             >
-              Lernen Sie die Köpfe hinter DigitalSolutions kennen
+              Lernen Sie mich kennen - Claude Simo, Gründer von DigitalSolutions
             </motion.p>
           </motion.div>
 
@@ -389,7 +374,7 @@ export default function AboutPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
+                className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
                 Jetzt kontaktieren
                 <FaArrowRight className="w-5 h-5" />

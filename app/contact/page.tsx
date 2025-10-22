@@ -20,8 +20,8 @@ const contactInfo = [
   {
     icon: FaPhone,
     title: "Telefon",
-    value: "+49 176 41960025",
-    link: "tel:+4917641960025",
+    value: "+49 179 6627473",
+    link: "tel:+4917966274733",
   },
   {
     icon: FaMapMarkerAlt,
@@ -121,7 +121,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full"
+              className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
                 💬 Lassen Sie uns sprechen
@@ -158,7 +158,7 @@ export default function ContactPage() {
                 whileHover={{ y: -5 }}
                 className="p-6 bg-black rounded-xl border border-zinc-800 hover:border-zinc-700 transition-all group"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-sm font-semibold text-gray-400 mb-2">
@@ -354,7 +354,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -391,7 +391,7 @@ export default function ContactPage() {
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-white text-sm">✓</span>
                       </div>
                       <div>
@@ -404,7 +404,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-white text-sm">✓</span>
                       </div>
                       <div>
@@ -417,7 +417,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-6 h-6 bg-gradient-to-r from-blue-700 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-white text-sm">✓</span>
                       </div>
                       <div>
@@ -437,11 +437,11 @@ export default function ContactPage() {
                     9:00 und 18:00 Uhr.
                   </p>
                   <a
-                    href="tel:+4917641960025"
+                    href="tel:+4917966274733"
                     className="inline-flex items-center gap-3 text-2xl font-bold text-white hover:text-blue-400 transition-colors"
                   >
                     <FaPhone className="w-6 h-6" />
-                    +49 176 41960025
+                    +49 179 6627473
                   </a>
                 </div>
               </div>

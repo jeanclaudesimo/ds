@@ -3,10 +3,10 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary: #8b5cf6;
-  --accent: #06b6d4;
+  --primary: rgb(23, 67, 116);
+  --primary-dark: rgb(15, 47, 82);
+  --secondary: rgb(37, 99, 235);
+  --accent: rgb(59, 130, 246);
   --muted: #1e1e1e;
   --border: #27272a;
 }

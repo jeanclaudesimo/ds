@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +38,20 @@ export const metadata: Metadata = {
   authors: [{ name: "DigitalSolutions" }],
   creator: "DigitalSolutions",
   metadataBase: new URL("https://digitalssolutions.de"),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-icon',
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/favicon.svg',
+        color: '#174374',
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "de_DE",
@@ -62,6 +78,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  manifest: '/manifest',
+  themeColor: '#174374',
 };
 
 export default function RootLayout({
@@ -77,6 +95,8 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <CookieConsent />
       </body>
     </html>
   );

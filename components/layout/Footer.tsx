@@ -28,7 +28,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/claude-simo-012580177", label: "LinkedIn" },
   { icon: FaTwitter, href: "#", label: "Twitter" },
   { icon: FaGithub, href: "#", label: "GitHub" },
 ];
@@ -69,10 +69,10 @@ export default function Footer() {
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <FaPhone className="w-4 h-4 text-blue-500 flex-shrink-0" />
                 <a
-                  href="tel:+4917641960025"
+                  href="tel:+4917966274733"
                   className="hover:text-white transition-colors"
                 >
-                  +49 176 41960025
+                  +49 179 6627473
                 </a>
               </div>
             </div>
