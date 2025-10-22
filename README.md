@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DigitalSolutions Website
 
-## Getting Started
+Eine professionelle, moderne Website für DigitalSolutions - gebaut mit Next.js 15, TypeScript und Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **Next.js 15** mit App Router und Server Components
+- **TypeScript** für Type-Safety
+- **Tailwind CSS v4** für modernes Styling
+- **Framer Motion** für flüssige Animationen
+- **Responsive Design** - optimiert für alle Geräte
+- **SEO-optimiert** mit Metadata, Sitemap und Robots.txt
+- **Dark Theme** mit Gradient-Akzenten
+- **Performance-optimiert** mit statischer Generierung
+
+## 🛠️ Installation & Development
+
+### Voraussetzungen
+
+- Node.js 18+ installiert
+- npm
+
+### Installation
 
 ```bash
+# Dependencies installieren
+npm install
+
+# Development Server starten
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die Website ist dann unter [http://localhost:3000](http://localhost:3000) erreichbar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build für Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production Build erstellen
+npm run build
 
-## Learn More
+# Production Build starten
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 Seiten
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **/** - Homepage mit Hero, Features, Stats und CTA
+- **/services** - Detaillierte Service-Angebote mit Preisen
+- **/portfolio** - Projekt-Showcase mit Filter-Funktion
+- **/about** - Unternehmensinfo, Team, Werte und Timeline
+- **/contact** - Kontaktformular und Informationen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design System
 
-## Deploy on Vercel
+### Farben
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Background**: `#0a0a0a` (Schwarz)
+- **Primary**: `#3b82f6` (Blau)
+- **Secondary**: `#8b5cf6` (Lila)
+- **Accent**: `#06b6d4` (Cyan)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Typografie
+
+- **Sans-Serif**: Geist Sans
+- **Monospace**: Geist Mono
+
+## 🔧 Anpassungen
+
+### Kontaktinformationen ändern
+
+Bearbeiten Sie `/components/layout/Footer.tsx` und `/app/contact/page.tsx`
+
+### Farben anpassen
+
+Bearbeiten Sie `/app/globals.css`:
+
+```css
+:root {
+  --primary: #ihre-farbe;
+  --secondary: #ihre-farbe;
+}
+```
+
+## 📊 SEO
+
+Die Website ist vollständig SEO-optimiert:
+
+- ✅ Meta Tags (Title, Description, Keywords)
+- ✅ Open Graph Tags
+- ✅ Sitemap.xml
+- ✅ Robots.txt
+- ✅ PWA Manifest
+- ✅ Semantisches HTML
+
+## 🚀 Deployment
+
+### Vercel (Empfohlen)
+
+```bash
+npm i -g vercel
+vercel
+```
+
+Das Projekt kann auch auf Netlify, AWS Amplify, Cloudflare Pages oder eigenem Server deployed werden.
+
+## 📝 License
+
+© 2024 DigitalSolutions. Alle Rechte vorbehalten.
+
+---
+
+**Built with ❤️ by DigitalSolutions**
