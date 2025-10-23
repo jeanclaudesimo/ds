@@ -16,7 +16,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
       - "traefik.http.routers.ds-secure.entrypoints=frontendsecure"
-      - "traefik.http.routers.ds-secure.rule=Host(`c-simweb.de`)"
+      - "traefik.http.routers.ds-secure.rule=Host(`digitalssolutions.de`)"
       - "traefik.http.routers.ds-secure.service=ds"
       - "traefik.http.routers.ds-secure.tls=true"
       - "traefik.http.services.ds.loadbalancer.server.port=3001"
