@@ -19,7 +19,7 @@ services:
       - "traefik.http.routers.ds-secure.rule=Host(`monitoring.c-simweb.de`)"
       - "traefik.http.routers.ds-secure.service=ds"
       - "traefik.http.routers.ds-secure.tls=true"
-      - "traefik.http.services.ds.loadbalancer.server.port=3000"
+      - "traefik.http.services.ds.loadbalancer.server.port=3001"
       - "traefik.http.middlewares.ds-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.routers.ds-secure.middlewares=ds-headers"
 
