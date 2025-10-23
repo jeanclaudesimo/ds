@@ -1,0 +1,28 @@
+services:
+  ds:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ds
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-net"
+      - "traefik.http.routers.ds-secure.entrypoints=frontendsecure"
+      - "traefik.http.routers.ds-secure.rule=Host(`monitoring.c-simweb.de`)"
+      - "traefik.http.routers.ds-secure.service=ds"
+      - "traefik.http.routers.ds-secure.tls=true"
+      - "traefik.http.services.ds.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.ds-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.ds-secure.middlewares=ds-headers"
+
+networks:
+  traefik-net:
+    external: true
