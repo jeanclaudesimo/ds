@@ -10,7 +10,7 @@ export default function StructuredData() {
     description:
       "Professionelle Webentwicklung, Landing Pages und Web-Applikationen. Spezialisiert auf PHP, Laravel, Symfony, React und Next.js.",
     email: "contact@digitalssolutions.com",
-    telephone: "+4917966274733",
+    telephone: "+491796627473",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Gummersbach",
@@ -88,7 +88,7 @@ export default function StructuredData() {
     url: "https://digitalssolutions.de",
     image: "https://digitalssolutions.de/favicon.svg",
     email: "contact@digitalssolutions.com",
-    telephone: "+4917966274733",
+    telephone: "+491796627473",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Gummersbach",

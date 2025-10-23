@@ -54,7 +54,7 @@ export default function ContactPage() {
       icon: FaPhone,
       title: t('info.phone.title'),
       value: t('info.phone.value'),
-      link: "tel:+4917966274733",
+      link: "tel:+491796627473",
     },
     {
       icon: FaMapMarkerAlt,
@@ -433,7 +433,7 @@ export default function ContactPage() {
                     {t('callBox.description')}
                   </p>
                   <a
-                    href="tel:+4917966274733"
+                    href="tel:+491796627473"
                     className="inline-flex items-center gap-3 text-2xl font-bold text-white hover:text-blue-400 transition-colors"
                   >
                     <FaPhone className="w-6 h-6" />

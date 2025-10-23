@@ -33,7 +33,7 @@ export default function ImpressumPage() {
               <p>
                 <strong>Telefon:</strong>{" "}
                 <a
-                  href="tel:+4917966274733"
+                  href="tel:+491796627473"
                   className="text-blue-400 hover:text-blue-300"
                 >
                   +49 179 6627473
