@@ -2,18 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import {
   FaLinkedinIn,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
   FaDownload,
-  FaCode,
-  FaServer,
-  FaDocker,
-  FaGitAlt,
-  FaDatabase,
-  FaCloud,
 } from "react-icons/fa";
 import {
   SiPhp,
@@ -27,95 +23,26 @@ import {
   SiDocker,
   SiKubernetes,
   SiAmazon,
-  SiGit,
   SiLinux,
+  SiNodedotjs,
 } from "react-icons/si";
+import { FaServer } from "react-icons/fa";
 
-const experience = [
-  {
-    title: "Senior Full-Stack PHP Developer & DevOps",
-    company: "DigitalSolutions",
-    period: "2019 - Heute",
-    location: "Gummersbach, Deutschland",
-    description: [
-      "Entwicklung und Wartung von Full-Stack Web-Applikationen mit PHP/Laravel/Symfony",
-      "DevOps-Automatisierung: CI/CD-Pipelines, Docker, Kubernetes",
-      "Aufbau und Verwaltung von Cloud-Infrastrukturen (AWS, Azure)",
-      "Performance-Optimierung und Skalierung von Anwendungen",
-      "Code Reviews und Mentoring von Junior-Entwicklern",
-    ],
-  },
-  {
-    title: "PHP Developer",
-    company: "Freelance",
-    period: "2017 - 2019",
-    location: "Remote",
-    description: [
-      "Entwicklung von E-Commerce-Plattformen und CMS-Lösungen",
-      "RESTful API-Entwicklung und Integration von Drittanbieter-Services",
-      "Datenbank-Design und -Optimierung (MySQL, PostgreSQL)",
-      "Frontend-Entwicklung mit JavaScript, Vue.js und React",
-    ],
-  },
-];
-
-const skills = [
-  {
-    category: "Backend Development",
-    items: [
-      { name: "PHP", icon: SiPhp, level: 95 },
-      { name: "Laravel", icon: SiLaravel, level: 95 },
-      { name: "Symfony", icon: SiSymfony, level: 95 },
-      { name: "Node.js", icon: FaServer, level: 80 },
-    ],
-  },
-  {
-    category: "Frontend Development",
-    items: [
-      { name: "JavaScript", icon: SiJavascript, level: 90 },
-      { name: "React", icon: SiReact, level: 85 },
-      { name: "Next.js", icon: SiNextdotjs, level: 85 },
-    ],
-  },
-  {
-    category: "DevOps & Cloud",
-    items: [
-      { name: "Docker", icon: SiDocker, level: 90 },
-      { name: "Kubernetes", icon: SiKubernetes, level: 80 },
-      { name: "AWS", icon: SiAmazon, level: 85 },
-      { name: "Linux", icon: SiLinux, level: 90 },
-    ],
-  },
-  {
-    category: "Datenbanken",
-    items: [
-      { name: "MySQL", icon: SiMysql, level: 90 },
-      { name: "PostgreSQL", icon: SiPostgresql, level: 85 },
-    ],
-  },
-];
-
-const education = [
-  {
-    degree: "Informatik",
-    institution: "Universität",
-    period: "2014 - 2018",
-    description: "Schwerpunkt: Web-Entwicklung und Software Engineering",
-  },
-];
-
-const certifications = [
-  "AWS Certified Solutions Architect",
-  "Kubernetes Administrator (CKA)",
-  "Laravel Certified Developer",
-  "Docker Certified Associate",
-];
-
-const languages = [
-  { name: "Deutsch", level: "Muttersprache" },
-  { name: "Englisch", level: "Fließend" },
-  { name: "Französisch", level: "Grundkenntnisse" },
-];
+const iconMap: any = {
+  PHP: SiPhp,
+  Laravel: SiLaravel,
+  Symfony: SiSymfony,
+  "Node.js": SiNodedotjs,
+  JavaScript: SiJavascript,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  Docker: SiDocker,
+  Kubernetes: SiKubernetes,
+  AWS: SiAmazon,
+  Linux: SiLinux,
+  MySQL: SiMysql,
+  PostgreSQL: SiPostgresql,
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -135,6 +62,25 @@ const itemVariants = {
 };
 
 export default function CVPage() {
+  const t = useTranslations("cv");
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || "de";
+
+  // Get experience jobs from translations
+  const experienceJobs = t.raw("experience.jobs");
+
+  // Get skills categories from translations
+  const skillsCategories = t.raw("skills.categories");
+
+  // Get education items from translations
+  const educationItems = t.raw("education.items");
+
+  // Get certifications from translations
+  const certifications = t.raw("certifications.items");
+
+  // Get languages from translations
+  const languages = t.raw("languages.items");
+
   return (
     <div className="bg-black pt-20">
       {/* Hero Section */}
@@ -159,19 +105,19 @@ export default function CVPage() {
                 </div>
 
                 <h1 className="text-3xl font-bold mb-2 text-center">
-                  Claude Simo
+                  {t("profile.name")}
                 </h1>
                 <p className="text-blue-400 text-center mb-6">
-                  Senior Full-Stack PHP Developer
+                  {t("profile.title")}
                 </p>
                 <p className="text-gray-400 text-center text-sm mb-6">
-                  Laravel | Symfony | DevOps
+                  {t("profile.subtitle")}
                 </p>
 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
                     <FaMapMarkerAlt className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                    <span>Gummersbach, Deutschland</span>
+                    <span>{t("profile.location")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
                     <FaEnvelope className="w-4 h-4 text-blue-500 flex-shrink-0" />
@@ -199,7 +145,7 @@ export default function CVPage() {
                       rel="noopener noreferrer"
                       className="hover:text-white transition-colors"
                     >
-                      LinkedIn Profil
+                      {t("profile.linkedIn")}
                     </a>
                   </div>
                 </div>
@@ -210,7 +156,7 @@ export default function CVPage() {
                   className="w-full px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center justify-center gap-2"
                 >
                   <FaDownload className="w-4 h-4" />
-                  CV als PDF
+                  {t("profile.downloadCV")}
                 </motion.button>
               </div>
             </motion.div>
@@ -224,23 +170,17 @@ export default function CVPage() {
             >
               {/* About */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Über mich</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("about.title")}</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Senior Full-Stack PHP Developer mit 5+ Jahren Erfahrung in der
-                  Entwicklung skalierbarer Web-Applikationen. Spezialisiert auf
-                  Laravel, Symfony, DevOps-Praktiken und Cloud-Infrastrukturen. Meine
-                  Leidenschaft liegt darin, robuste, performante Lösungen zu
-                  entwickeln, die echte Geschäftsprobleme lösen. Erfahrung in der
-                  gesamten Entwicklungspipeline: von der Konzeption über die
-                  Implementierung bis zum Deployment und Monitoring.
+                  {t("about.description")}
                 </p>
               </div>
 
               {/* Experience */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Berufserfahrung</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("experience.title")}</h2>
                 <div className="space-y-8">
-                  {experience.map((job, index) => (
+                  {experienceJobs.map((job: any, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -260,7 +200,7 @@ export default function CVPage() {
                         </div>
                       </div>
                       <ul className="space-y-2">
-                        {job.description.map((item, idx) => (
+                        {job.tasks.map((item: string, idx: number) => (
                           <li
                             key={idx}
                             className="text-gray-400 flex items-start gap-2"
@@ -277,9 +217,9 @@ export default function CVPage() {
 
               {/* Skills */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Technische Skills</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("skills.title")}</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {skills.map((skillGroup, index) => (
+                  {skillsCategories.map((skillGroup: any, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -289,33 +229,36 @@ export default function CVPage() {
                       className="p-6 bg-zinc-900 rounded-xl border border-zinc-800"
                     >
                       <h3 className="text-lg font-semibold mb-4">
-                        {skillGroup.category}
+                        {skillGroup.name}
                       </h3>
                       <div className="space-y-4">
-                        {skillGroup.items.map((skill, idx) => (
-                          <div key={idx}>
-                            <div className="flex items-center justify-between mb-2">
-                              <div className="flex items-center gap-2">
-                                <skill.icon className="w-5 h-5 text-blue-400" />
-                                <span className="text-gray-300">
-                                  {skill.name}
+                        {skillGroup.skills.map((skill: any, idx: number) => {
+                          const IconComponent = iconMap[skill.name] || FaServer;
+                          return (
+                            <div key={idx}>
+                              <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center gap-2">
+                                  <IconComponent className="w-5 h-5 text-blue-400" />
+                                  <span className="text-gray-300">
+                                    {skill.name}
+                                  </span>
+                                </div>
+                                <span className="text-gray-400 text-sm">
+                                  {skill.level}%
                                 </span>
                               </div>
-                              <span className="text-gray-400 text-sm">
-                                {skill.level}%
-                              </span>
+                              <div className="w-full bg-zinc-800 rounded-full h-2">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: `${skill.level}%` }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 1, delay: 0.2 }}
+                                  className="bg-gradient-to-r from-blue-700 to-blue-400 h-2 rounded-full"
+                                />
+                              </div>
                             </div>
-                            <div className="w-full bg-zinc-800 rounded-full h-2">
-                              <motion.div
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, delay: 0.2 }}
-                                className="bg-gradient-to-r from-blue-700 to-blue-400 h-2 rounded-full"
-                              />
-                            </div>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </motion.div>
                   ))}
@@ -324,8 +267,8 @@ export default function CVPage() {
 
               {/* Education */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Ausbildung</h2>
-                {education.map((edu, index) => (
+                <h2 className="text-3xl font-bold mb-6">{t("education.title")}</h2>
+                {educationItems.map((edu: any, index: number) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -343,9 +286,9 @@ export default function CVPage() {
 
               {/* Certifications */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Zertifizierungen</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("certifications.title")}</h2>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {certifications.map((cert, index) => (
+                  {certifications.map((cert: string, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -365,9 +308,9 @@ export default function CVPage() {
 
               {/* Languages */}
               <div>
-                <h2 className="text-3xl font-bold mb-6">Sprachen</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("languages.title")}</h2>
                 <div className="grid md:grid-cols-3 gap-4">
-                  {languages.map((lang, index) => (
+                  {languages.map((lang: any, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -403,18 +346,18 @@ export default function CVPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Interessiert an einer Zusammenarbeit?
+              {t("cta.title")}
             </h2>
             <p className="text-xl text-gray-400 mb-12">
-              Lassen Sie uns gemeinsam Ihr nächstes Projekt verwirklichen.
+              {t("cta.description")}
             </p>
-            <Link href="/contact">
+            <Link href={`/${currentLocale}/contact`}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
-                Kontakt aufnehmen
+                {t("cta.button")}
               </motion.button>
             </Link>
           </motion.div>

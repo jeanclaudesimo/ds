@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import {
   FaCode,
   FaRocket,
@@ -13,70 +15,61 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-const features = [
+const getFeatures = (t: any) => [
   {
     icon: FaCode,
-    title: "Moderne Technologien",
-    description:
-      "Wir nutzen die neuesten Frameworks wie Next.js, React und Laravel für zukunftssichere Lösungen.",
+    title: t('features.modernTech.title'),
+    description: t('features.modernTech.description'),
   },
   {
     icon: FaRocket,
-    title: "Schnelle Ladezeiten",
-    description:
-      "Optimierte Performance für beste User Experience und höhere Conversion-Raten.",
+    title: t('features.fastLoading.title'),
+    description: t('features.fastLoading.description'),
   },
   {
     icon: FaMobileAlt,
-    title: "Responsive Design",
-    description:
-      "Perfekte Darstellung auf allen Geräten - vom Smartphone bis zum Desktop.",
+    title: t('features.responsive.title'),
+    description: t('features.responsive.description'),
   },
   {
     icon: FaChartLine,
-    title: "SEO Optimiert",
-    description:
-      "Beste Sichtbarkeit in Suchmaschinen durch professionelle SEO-Optimierung.",
+    title: t('features.seo.title'),
+    description: t('features.seo.description'),
   },
   {
     icon: FaShieldAlt,
-    title: "Maximale Sicherheit",
-    description:
-      "Höchste Sicherheitsstandards zum Schutz Ihrer Daten und Ihrer Kunden.",
+    title: t('features.security.title'),
+    description: t('features.security.description'),
   },
   {
     icon: FaClock,
-    title: "Pünktliche Lieferung",
-    description:
-      "Zuverlässige Projektumsetzung innerhalb der vereinbarten Zeitrahmen.",
+    title: t('features.delivery.title'),
+    description: t('features.delivery.description'),
   },
 ];
 
-const stats = [
-  { value: "50+", label: "Abgeschlossene Projekte" },
-  { value: "30+", label: "Zufriedene Kunden" },
-  { value: "5+", label: "Jahre Erfahrung" },
-  { value: "100%", label: "Kundenzufriedenheit" },
+const getStats = (t: any) => [
+  { value: "50+", label: t('stats.projects') },
+  { value: "30+", label: t('stats.clients') },
+  { value: "5+", label: t('stats.experience') },
+  { value: "100%", label: t('stats.satisfaction') },
 ];
 
-const services = [
+const getServices = (t: any) => [
   {
-    title: "Moderne Websites",
-    description:
-      "Professionelle Unternehmenswebsites, E-Commerce-Plattformen und institutionelle Websites mit SEO-Optimierung.",
-    features: ["Responsive Design", "CMS Integration", "SEO-Optimierung"],
+    title: t('services.websites.title'),
+    description: t('services.websites.description'),
+    features: [t('services.websites.feature1'), t('services.websites.feature2'), t('services.websites.feature3')],
   },
   {
-    title: "Landing Pages",
-    description:
-      "Conversion-fokussierte Landing Pages mit A/B-Testing und Analytics-Integration für maximale Conversions.",
-    features: ["A/B Testing", "Analytics", "Lead Generation"],
+    title: t('services.landing.title'),
+    description: t('services.landing.description'),
+    features: [t('services.landing.feature1'), t('services.landing.feature2'), t('services.landing.feature3')],
   },
   {
-    title: "Web Applikationen",
-    description:
-      "Maßgeschneiderte Lösungen mit RESTful APIs, optimierten Datenbanken und kontinuierlicher Wartung.",
-    features: ["Custom Solutions", "API Integration", "Maintenance"],
+    title: t('services.webapps.title'),
+    description: t('services.webapps.description'),
+    features: [t('services.webapps.feature1'), t('services.webapps.feature2'), t('services.webapps.feature3')],
   },
 ];
 
@@ -102,6 +95,14 @@ const itemVariants = {
 };
 
 export default function Home() {
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] || 'de';
+  const t = useTranslations('home');
+
+  const features = getFeatures(t);
+  const stats = getStats(t);
+  const services = getServices(t);
+
   return (
     <div className="bg-black">
       {/* Hero Section */}
@@ -131,40 +132,39 @@ export default function Home() {
               className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full backdrop-blur-sm"
             >
               <span className="text-blue-400 font-medium">
-                💻 Senior Full-Stack PHP Developer | Laravel & Symfony | DevOps
+                {t('hero.badge')}
               </span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Claude Simo
+              {t('hero.title')}
               <br />
-              <span className="gradient-text">Digital Solutions</span>
+              <span className="gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              Professionelle Webentwicklung mit PHP, Laravel, Symfony, DevOps und modernen Technologien.
-              Von der Konzeption bis zum Deployment.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/cv">
+              <Link href={`/${currentLocale}/cv`}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/50 transition-shadow flex items-center gap-2"
                 >
-                  Lebenslauf ansehen
+                  {t('hero.ctaPrimary')}
                   <FaArrowRight className="w-4 h-4" />
                 </motion.button>
               </Link>
 
-              <Link href="/contact">
+              <Link href={`/${currentLocale}/contact`}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-zinc-900 border border-zinc-800 rounded-lg text-white font-semibold text-lg hover:border-zinc-700 transition-colors"
                 >
-                  Kontakt aufnehmen
+                  {t('hero.ctaSecondary')}
                 </motion.button>
               </Link>
             </div>
@@ -228,14 +228,13 @@ export default function Home() {
               variants={itemVariants}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Warum <span className="gradient-text">DigitalSolutions</span>?
+              {t('features.title')} <span className="gradient-text">{t('features.titleHighlight')}</span>?
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-gray-400 max-w-2xl mx-auto"
             >
-              Wir bieten Ihnen professionelle Lösungen mit höchsten
-              Qualitätsstandards
+              {t('features.subtitle')}
             </motion.p>
           </motion.div>
 
@@ -278,14 +277,13 @@ export default function Home() {
               variants={itemVariants}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Unsere <span className="gradient-text">Services</span>
+              {t('services.title')} <span className="gradient-text">{t('services.titleHighlight')}</span>
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-xl text-gray-400 max-w-2xl mx-auto"
             >
-              Von der Konzeption bis zur Umsetzung - wir begleiten Ihr
-              digitales Projekt
+              {t('services.subtitle')}
             </motion.p>
           </motion.div>
 
@@ -326,13 +324,13 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="text-center mt-12"
           >
-            <Link href="/services">
+            <Link href={`/${currentLocale}/services`}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-2"
               >
-                Alle Services ansehen
+                {t('services.cta')}
                 <FaArrowRight className="w-4 h-4" />
               </motion.button>
             </Link>
@@ -354,19 +352,18 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Bereit, Ihr Projekt zu starten?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-gray-400 mb-12">
-              Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen.
-              Kontaktieren Sie uns für eine kostenlose Beratung.
+              {t('cta.description')}
             </p>
-            <Link href="/contact">
+            <Link href={`/${currentLocale}/contact`}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
-                Kostenlose Beratung vereinbaren
+                {t('cta.button')}
                 <FaArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>

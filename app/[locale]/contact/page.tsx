@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 import {
   FaEnvelope,
   FaPhone,
@@ -9,33 +10,6 @@ import {
   FaClock,
   FaPaperPlane,
 } from "react-icons/fa";
-
-const contactInfo = [
-  {
-    icon: FaEnvelope,
-    title: "E-Mail",
-    value: "contact@digitalssolutions.com",
-    link: "mailto:contact@digitalssolutions.com",
-  },
-  {
-    icon: FaPhone,
-    title: "Telefon",
-    value: "+49 179 6627473",
-    link: "tel:+4917966274733",
-  },
-  {
-    icon: FaMapMarkerAlt,
-    title: "Adresse",
-    value: "Gummersbach, Deutschland",
-    link: "#",
-  },
-  {
-    icon: FaClock,
-    title: "Erreichbarkeit",
-    value: "Mo-Fr: 9:00 - 18:00 Uhr",
-    link: "#",
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -55,6 +29,7 @@ const itemVariants = {
 };
 
 export default function ContactPage() {
+  const t = useTranslations('contact');
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,6 +42,33 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const contactInfo = [
+    {
+      icon: FaEnvelope,
+      title: t('info.email.title'),
+      value: t('info.email.value'),
+      link: "mailto:contact@digitalssolutions.com",
+    },
+    {
+      icon: FaPhone,
+      title: t('info.phone.title'),
+      value: t('info.phone.value'),
+      link: "tel:+4917966274733",
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: t('info.address.title'),
+      value: t('info.address.value'),
+      link: "#",
+    },
+    {
+      icon: FaClock,
+      title: t('info.hours.title'),
+      value: t('info.hours.value'),
+      link: "#",
+    },
+  ];
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -124,17 +126,16 @@ export default function ContactPage() {
               className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
-                💬 Lassen Sie uns sprechen
+                {t('hero.badge')}
               </span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Kontaktieren Sie <span className="gradient-text">uns</span>
+              {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-              Erzählen Sie uns von Ihrem Projekt. Wir freuen uns darauf, mit
-              Ihnen zusammenzuarbeiten.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -183,12 +184,11 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Senden Sie uns eine{" "}
-                <span className="gradient-text">Nachricht</span>
+                {t('form.title')}{" "}
+                <span className="gradient-text">{t('form.titleHighlight')}</span>
               </h2>
               <p className="text-gray-400 mb-8">
-                Füllen Sie das Formular aus und wir melden uns innerhalb von 24
-                Stunden bei Ihnen.
+                {t('form.subtitle')}
               </p>
 
               {submitSuccess && (
@@ -197,8 +197,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400"
                 >
-                  Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir
-                  melden uns bald bei Ihnen.
+                  {t('form.successMessage')}
                 </motion.div>
               )}
 
@@ -209,7 +208,7 @@ export default function ContactPage() {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Name *
+                      {t('form.fields.name.label')} *
                     </label>
                     <input
                       type="text"
@@ -219,7 +218,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="Ihr Name"
+                      placeholder={t('form.fields.name.placeholder')}
                     />
                   </div>
 
@@ -228,7 +227,7 @@ export default function ContactPage() {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      E-Mail *
+                      {t('form.fields.email.label')} *
                     </label>
                     <input
                       type="email"
@@ -238,7 +237,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="ihre@email.de"
+                      placeholder={t('form.fields.email.placeholder')}
                     />
                   </div>
                 </div>
@@ -249,7 +248,7 @@ export default function ContactPage() {
                       htmlFor="company"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Unternehmen
+                      {t('form.fields.company.label')}
                     </label>
                     <input
                       type="text"
@@ -258,7 +257,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="Ihr Unternehmen"
+                      placeholder={t('form.fields.company.placeholder')}
                     />
                   </div>
 
@@ -267,7 +266,7 @@ export default function ContactPage() {
                       htmlFor="phone"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Telefon
+                      {t('form.fields.phone.label')}
                     </label>
                     <input
                       type="tel"
@@ -276,7 +275,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="+49 123 456789"
+                      placeholder={t('form.fields.phone.placeholder')}
                     />
                   </div>
                 </div>
@@ -287,7 +286,7 @@ export default function ContactPage() {
                       htmlFor="service"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Gewünschter Service *
+                      {t('form.fields.service.label')} *
                     </label>
                     <select
                       id="service"
@@ -297,13 +296,13 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
                     >
-                      <option value="">Bitte wählen...</option>
-                      <option value="website">Moderne Website</option>
-                      <option value="landing">Landing Page</option>
-                      <option value="webapp">Web Applikation</option>
-                      <option value="ecommerce">E-Commerce</option>
-                      <option value="seo">SEO & Performance</option>
-                      <option value="other">Sonstiges</option>
+                      <option value="">{t('form.fields.service.placeholder')}</option>
+                      <option value="website">{t('form.fields.service.options.website')}</option>
+                      <option value="landing">{t('form.fields.service.options.landing')}</option>
+                      <option value="webapp">{t('form.fields.service.options.webapp')}</option>
+                      <option value="ecommerce">{t('form.fields.service.options.ecommerce')}</option>
+                      <option value="seo">{t('form.fields.service.options.seo')}</option>
+                      <option value="other">{t('form.fields.service.options.other')}</option>
                     </select>
                   </div>
 
@@ -312,7 +311,7 @@ export default function ContactPage() {
                       htmlFor="budget"
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Budget
+                      {t('form.fields.budget.label')}
                     </label>
                     <select
                       id="budget"
@@ -321,11 +320,11 @@ export default function ContactPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors"
                     >
-                      <option value="">Bitte wählen...</option>
-                      <option value="1-3k">1.000€ - 3.000€</option>
-                      <option value="3-5k">3.000€ - 5.000€</option>
-                      <option value="5-10k">5.000€ - 10.000€</option>
-                      <option value="10k+">10.000€+</option>
+                      <option value="">{t('form.fields.budget.placeholder')}</option>
+                      <option value="1-3k">{t('form.fields.budget.options.1-3k')}</option>
+                      <option value="3-5k">{t('form.fields.budget.options.3-5k')}</option>
+                      <option value="5-10k">{t('form.fields.budget.options.5-10k')}</option>
+                      <option value="10k+">{t('form.fields.budget.options.10k+')}</option>
                     </select>
                   </div>
                 </div>
@@ -335,7 +334,7 @@ export default function ContactPage() {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    Ihre Nachricht *
+                    {t('form.fields.message.label')} *
                   </label>
                   <textarea
                     id="message"
@@ -345,7 +344,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                    placeholder="Erzählen Sie uns von Ihrem Projekt..."
+                    placeholder={t('form.fields.message.placeholder')}
                   />
                 </div>
 
@@ -359,11 +358,11 @@ export default function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Wird gesendet...
+                      {t('form.submit.submitting')}
                     </>
                   ) : (
                     <>
-                      Nachricht senden
+                      {t('form.submit.idle')}
                       <FaPaperPlane className="w-4 h-4" />
                     </>
                   )}
@@ -382,12 +381,10 @@ export default function ContactPage() {
               <div className="sticky top-32 space-y-8">
                 <div className="p-8 bg-zinc-900 rounded-2xl border border-zinc-800">
                   <h3 className="text-2xl font-bold mb-4">
-                    Kostenlose Erstberatung
+                    {t('consultation.title')}
                   </h3>
                   <p className="text-gray-400 mb-6">
-                    In einem unverbindlichen Gespräch analysieren wir Ihre
-                    Anforderungen und erstellen Ihnen ein maßgeschneidertes
-                    Angebot.
+                    {t('consultation.description')}
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -396,10 +393,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-1">
-                          Persönliche Beratung
+                          {t('consultation.benefits.personal.title')}
                         </h4>
                         <p className="text-sm text-gray-400">
-                          Individuell auf Ihre Bedürfnisse zugeschnitten
+                          {t('consultation.benefits.personal.description')}
                         </p>
                       </div>
                     </div>
@@ -409,10 +406,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-semibold mb-1">
-                          Transparente Preise
+                          {t('consultation.benefits.transparent.title')}
                         </h4>
                         <p className="text-sm text-gray-400">
-                          Klare Kostenkalkulation ohne versteckte Gebühren
+                          {t('consultation.benefits.transparent.description')}
                         </p>
                       </div>
                     </div>
@@ -421,9 +418,9 @@ export default function ContactPage() {
                         <span className="text-white text-sm">✓</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1">Schnelle Antwort</h4>
+                        <h4 className="font-semibold mb-1">{t('consultation.benefits.fast.title')}</h4>
                         <p className="text-sm text-gray-400">
-                          Rückmeldung innerhalb von 24 Stunden
+                          {t('consultation.benefits.fast.description')}
                         </p>
                       </div>
                     </div>
@@ -431,10 +428,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
-                  <h3 className="text-2xl font-bold mb-4">Direkt anrufen?</h3>
+                  <h3 className="text-2xl font-bold mb-4">{t('callBox.title')}</h3>
                   <p className="text-gray-400 mb-6">
-                    Sie erreichen uns telefonisch von Montag bis Freitag zwischen
-                    9:00 und 18:00 Uhr.
+                    {t('callBox.description')}
                   </p>
                   <a
                     href="tel:+4917966274733"
@@ -461,7 +457,7 @@ export default function ContactPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Häufige <span className="gradient-text">Fragen</span>
+              {t('faq.title')} <span className="gradient-text">{t('faq.titleHighlight')}</span>
             </h2>
           </motion.div>
 
@@ -472,31 +468,14 @@ export default function ContactPage() {
             variants={containerVariants}
             className="space-y-6"
           >
-            {[
-              {
-                q: "Wie lange dauert die Entwicklung einer Website?",
-                a: "Die Dauer hängt vom Umfang ab. Eine Landing Page kann in 1-2 Wochen fertig sein, während komplexe Web-Applikationen 2-3 Monate benötigen können.",
-              },
-              {
-                q: "Wie hoch sind die Kosten?",
-                a: "Unsere Preise variieren je nach Projektumfang. Landing Pages starten ab 1.500€, Unternehmenswebsites ab 2.500€ und Web-Applikationen ab 5.000€.",
-              },
-              {
-                q: "Bieten Sie auch Wartung und Support an?",
-                a: "Ja, wir bieten umfassende Wartungs- und Support-Pakete an, um Ihre Website immer aktuell und sicher zu halten.",
-              },
-              {
-                q: "Arbeiten Sie auch mit internationalen Kunden?",
-                a: "Absolut! Wir arbeiten mit Kunden aus Deutschland, Europa und weltweit zusammen. Kommunikation erfolgt per Video-Call, E-Mail und Projektmanagement-Tools.",
-              },
-            ].map((faq, index) => (
+            {['duration', 'pricing', 'support', 'international'].map((faqKey, index) => (
               <motion.div
-                key={index}
+                key={faqKey}
                 variants={itemVariants}
                 className="p-6 bg-black rounded-xl border border-zinc-800"
               >
-                <h3 className="text-lg font-semibold mb-3">{faq.q}</h3>
-                <p className="text-gray-400">{faq.a}</p>
+                <h3 className="text-lg font-semibold mb-3">{t(`faq.items.${faqKey}.question`)}</h3>
+                <p className="text-gray-400">{t(`faq.items.${faqKey}.answer`)}</p>
               </motion.div>
             ))}
           </motion.div>

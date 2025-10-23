@@ -1,0 +1,592 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "cv": "CV",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Consultation gratuite"
+  },
+  "home": {
+    "hero": {
+      "badge": "💻 Développeur Full-Stack Senior PHP | Laravel & Symfony | DevOps",
+      "title": "Claude Simo",
+      "titleHighlight": "Digital Solutions",
+      "description": "Développement web professionnel avec PHP, Laravel, Symfony, DevOps et technologies modernes. De la conception au déploiement.",
+      "ctaPrimary": "Voir le CV",
+      "ctaSecondary": "Nous contacter"
+    },
+    "stats": {
+      "projects": "Projets réalisés",
+      "clients": "Clients satisfaits",
+      "experience": "Ans d'expérience",
+      "satisfaction": "Satisfaction client"
+    },
+    "features": {
+      "title": "Pourquoi",
+      "titleHighlight": "DigitalSolutions",
+      "subtitle": "Nous vous offrons des solutions professionnelles avec les plus hauts standards de qualité",
+      "modernTech": {
+        "title": "Technologies modernes",
+        "description": "Nous utilisons les derniers frameworks comme Next.js, React et Laravel pour des solutions pérennes."
+      },
+      "fastLoading": {
+        "title": "Temps de chargement rapides",
+        "description": "Performance optimisée pour une meilleure expérience utilisateur et des taux de conversion plus élevés."
+      },
+      "responsive": {
+        "title": "Design responsive",
+        "description": "Affichage parfait sur tous les appareils - du smartphone au desktop."
+      },
+      "seo": {
+        "title": "SEO optimisé",
+        "description": "Meilleure visibilité dans les moteurs de recherche grâce à une optimisation SEO professionnelle."
+      },
+      "security": {
+        "title": "Sécurité maximale",
+        "description": "Standards de sécurité les plus élevés pour protéger vos données et celles de vos clients."
+      },
+      "delivery": {
+        "title": "Livraison ponctuelle",
+        "description": "Réalisation de projet fiable dans les délais convenus."
+      }
+    },
+    "services": {
+      "title": "Nos",
+      "titleHighlight": "Services",
+      "subtitle": "De la conception à la réalisation - nous accompagnons votre projet digital",
+      "websites": {
+        "title": "Sites web modernes",
+        "description": "Sites web d'entreprise professionnels, plateformes e-commerce et sites institutionnels avec optimisation SEO.",
+        "feature1": "Design responsive",
+        "feature2": "Intégration CMS",
+        "feature3": "Optimisation SEO"
+      },
+      "landing": {
+        "title": "Landing Pages",
+        "description": "Landing pages axées sur la conversion avec A/B testing et intégration analytics pour des conversions maximales.",
+        "feature1": "A/B Testing",
+        "feature2": "Analytics",
+        "feature3": "Génération de leads"
+      },
+      "webapps": {
+        "title": "Applications web",
+        "description": "Solutions sur mesure avec APIs RESTful, bases de données optimisées et maintenance continue.",
+        "feature1": "Solutions personnalisées",
+        "feature2": "Intégration API",
+        "feature3": "Maintenance"
+      },
+      "cta": "Voir tous les services"
+    },
+    "cta": {
+      "title": "Prêt à démarrer votre projet?",
+      "description": "Réalisons ensemble votre vision digitale. Contactez-nous pour une consultation gratuite.",
+      "button": "Réserver une consultation gratuite"
+    }
+  },
+  "footer": {
+    "tagline": "Votre partenaire pour la transformation digitale et les solutions web innovantes.",
+    "location": "Gummersbach, Allemagne",
+    "services": {
+      "title": "Services",
+      "websites": "Sites web modernes",
+      "landing": "Landing Pages",
+      "webapps": "Applications web",
+      "ecommerce": "E-Commerce"
+    },
+    "company": {
+      "title": "Entreprise",
+      "about": "À propos",
+      "portfolio": "Portfolio",
+      "contact": "Contact",
+      "logos": "Assets de marque"
+    },
+    "legal": {
+      "title": "Légal",
+      "imprint": "Mentions légales",
+      "privacy": "Confidentialité",
+      "terms": "CGV"
+    },
+    "copyright": "Tous droits réservés."
+  },
+  "cv": {
+    "profile": {
+      "name": "Claude Simo",
+      "title": "Développeur Full-Stack Senior PHP",
+      "subtitle": "Laravel | Symfony | DevOps",
+      "location": "Gummersbach, Allemagne",
+      "linkedIn": "Profil LinkedIn",
+      "downloadCV": "Télécharger le CV en PDF"
+    },
+    "about": {
+      "title": "À propos de moi",
+      "description": "Développeur Full-Stack PHP Senior avec plus de 5 ans d'expérience dans le développement d'applications web évolutives. Spécialisé dans Laravel, Symfony, les pratiques DevOps et les infrastructures cloud. Ma passion réside dans le développement de solutions robustes et performantes qui résolvent de vrais problèmes commerciaux. Expérience dans l'ensemble du pipeline de développement : de la conception à la mise en œuvre, du déploiement à la surveillance."
+    },
+    "experience": {
+      "title": "Expérience professionnelle",
+      "jobs": [
+        {
+          "title": "Développeur Full-Stack Senior PHP & DevOps",
+          "company": "DigitalSolutions",
+          "period": "2019 - Aujourd'hui",
+          "location": "Gummersbach, Allemagne",
+          "tasks": [
+            "Développement et maintenance d'applications web Full-Stack avec PHP/Laravel/Symfony",
+            "Automatisation DevOps : Pipelines CI/CD, Docker, Kubernetes",
+            "Construction et gestion d'infrastructures cloud (AWS, Azure)",
+            "Optimisation des performances et mise à l'échelle des applications",
+            "Revues de code et mentorat des développeurs juniors"
+          ]
+        },
+        {
+          "title": "Développeur PHP",
+          "company": "Freelance",
+          "period": "2017 - 2019",
+          "location": "À distance",
+          "tasks": [
+            "Développement de plateformes e-commerce et solutions CMS",
+            "Développement d'API RESTful et intégration de services tiers",
+            "Conception et optimisation de bases de données (MySQL, PostgreSQL)",
+            "Développement frontend avec JavaScript, Vue.js et React"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Compétences techniques",
+      "categories": [
+        {
+          "name": "Développement Backend",
+          "skills": [
+            { "name": "PHP", "level": 95 },
+            { "name": "Laravel", "level": 95 },
+            { "name": "Symfony", "level": 95 },
+            { "name": "Node.js", "level": 80 }
+          ]
+        },
+        {
+          "name": "Développement Frontend",
+          "skills": [
+            { "name": "JavaScript", "level": 90 },
+            { "name": "React", "level": 85 },
+            { "name": "Next.js", "level": 85 }
+          ]
+        },
+        {
+          "name": "DevOps & Cloud",
+          "skills": [
+            { "name": "Docker", "level": 90 },
+            { "name": "Kubernetes", "level": 80 },
+            { "name": "AWS", "level": 85 },
+            { "name": "Linux", "level": 90 }
+          ]
+        },
+        {
+          "name": "Bases de données",
+          "skills": [
+            { "name": "MySQL", "level": 90 },
+            { "name": "PostgreSQL", "level": 85 }
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Formation",
+      "items": [
+        {
+          "degree": "Informatique",
+          "institution": "Université",
+          "period": "2014 - 2018",
+          "description": "Spécialisation : Développement web et ingénierie logicielle"
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications",
+      "items": [
+        "AWS Certified Solutions Architect",
+        "Kubernetes Administrator (CKA)",
+        "Laravel Certified Developer",
+        "Docker Certified Associate"
+      ]
+    },
+    "languages": {
+      "title": "Langues",
+      "items": [
+        { "name": "Allemand", "level": "Langue maternelle" },
+        { "name": "Anglais", "level": "Courant" },
+        { "name": "Français", "level": "Connaissances de base" }
+      ]
+    },
+    "cta": {
+      "title": "Intéressé par une collaboration?",
+      "description": "Réalisons ensemble votre prochain projet.",
+      "button": "Nous contacter"
+    }
+  },
+  "services": {
+    "hero": {
+      "badge": "🎯 Solutions sur mesure",
+      "title": "Nos",
+      "titleHighlight": "Services",
+      "subtitle": "De la conception au lancement - nous vous offrons des solutions numériques complètes."
+    },
+    "items": {
+      "websites": {
+        "title": "Sites Web Modernes",
+        "description": "Sites web professionnels qui représentent parfaitement votre marque et enthousiasment votre public cible.",
+        "price": "À partir de 2.500€",
+        "features": {
+          "responsive": "Design responsive pour tous les appareils",
+          "cms": "Système de gestion de contenu (CMS)",
+          "seo": "Optimisation SEO dès le début",
+          "performance": "Optimisé pour les performances",
+          "gdpr": "Conforme au RGPD",
+          "support": "Maintenance et support"
+        }
+      },
+      "landing": {
+        "title": "Pages de destination",
+        "description": "Pages de destination optimisées pour les conversions qui transforment les visiteurs en clients et atteignent vos objectifs marketing.",
+        "price": "À partir de 1.500€",
+        "features": {
+          "conversion": "Design axé sur les conversions",
+          "testing": "Intégration de tests A/B",
+          "analytics": "Analytics et suivi",
+          "leads": "Génération de leads",
+          "cta": "Optimisation des appels à l'action",
+          "speed": "Temps de chargement rapides"
+        }
+      },
+      "webapps": {
+        "title": "Applications Web",
+        "description": "Applications web sur mesure pour vos processus métier et besoins individuels.",
+        "price": "À partir de 5.000€",
+        "features": {
+          "custom": "Développement personnalisé",
+          "api": "Intégration API RESTful",
+          "database": "Optimisation de base de données",
+          "users": "Gestion des utilisateurs",
+          "scalable": "Architecture évolutive",
+          "maintenance": "Maintenance continue"
+        }
+      },
+      "ecommerce": {
+        "title": "Solutions E-Commerce",
+        "description": "Boutiques en ligne puissantes avec toutes les fonctionnalités pour un business en ligne réussi.",
+        "price": "À partir de 4.000€",
+        "features": {
+          "products": "Gestion des produits",
+          "cart": "Panier et paiement",
+          "payment": "Intégration de passerelle de paiement",
+          "shipping": "Intégration d'expédition",
+          "orders": "Gestion des commandes",
+          "multilang": "Support multi-langues"
+        }
+      },
+      "mobile": {
+        "title": "Développement Mobile-First",
+        "description": "Applications web progressives et sites web optimisés pour mobile pour la meilleure expérience utilisateur sur smartphones.",
+        "price": "À partir de 3.500€",
+        "features": {
+          "pwa": "Progressive Web App (PWA)",
+          "offline": "Fonctionnalité hors ligne",
+          "push": "Notifications push",
+          "native": "Sensation d'application native",
+          "appstore": "Prêt pour l'App Store",
+          "crossplatform": "Multi-plateforme"
+        }
+      },
+      "seo": {
+        "title": "SEO & Performance",
+        "description": "Optimisation SEO technique et amélioration des performances pour de meilleurs classements et des temps de chargement plus rapides.",
+        "price": "À partir de 800€/mois",
+        "features": {
+          "audit": "Audit SEO technique",
+          "performance": "Optimisation des performances",
+          "vitals": "Core Web Vitals",
+          "schema": "Balisage Schema",
+          "content": "Optimisation du contenu",
+          "reporting": "Rapports mensuels"
+        }
+      }
+    },
+    "common": {
+      "features": "Prestations:",
+      "technologies": "Technologies:",
+      "requestQuote": "Demander un devis"
+    },
+    "process": {
+      "title": "Notre",
+      "titleHighlight": "Processus",
+      "subtitle": "De la première idée au lancement réussi - voici comment nous travaillons",
+      "steps": {
+        "consultation": {
+          "title": "Consultation & Analyse",
+          "description": "Nous analysons vos besoins et vous conseillons sur les meilleures solutions pour votre projet."
+        },
+        "concept": {
+          "title": "Concept & Design",
+          "description": "Développement d'un concept sur mesure et d'un design professionnel selon vos souhaits."
+        },
+        "development": {
+          "title": "Développement",
+          "description": "Mise en œuvre avec les technologies les plus modernes et une méthodologie de développement agile avec des mises à jour régulières."
+        },
+        "testing": {
+          "title": "Tests & Lancement",
+          "description": "Tests complets, assurance qualité et lancement réussi de votre projet."
+        },
+        "support": {
+          "title": "Support & Maintenance",
+          "description": "Support continu, mises à jour et assistance technique pour un succès à long terme."
+        }
+      }
+    },
+    "technologies": {
+      "title": "Nos",
+      "titleHighlight": "Technologies",
+      "subtitle": "Nous travaillons avec les technologies les plus modernes et éprouvées",
+      "categories": {
+        "frontend": {
+          "name": "Frontend",
+          "tech": "Next.js, React, Vue.js"
+        },
+        "backend": {
+          "name": "Backend",
+          "tech": "Node.js, Laravel, PHP"
+        },
+        "hosting": {
+          "name": "Hébergement",
+          "tech": "Vercel, AWS, Azure"
+        },
+        "analytics": {
+          "name": "Analytics",
+          "tech": "GA4, Mixpanel"
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt pour votre projet?",
+      "description": "Développons ensemble la solution parfaite pour vos besoins.",
+      "button": "Demander une consultation gratuite"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "badge": "💼 Projets réussis",
+      "title": "Notre",
+      "titleHighlight": "Portfolio",
+      "subtitle": "Découvrez notre travail - une sélection de nos projets les plus réussis."
+    },
+    "categories": {
+      "all": "Tous",
+      "website": "Site Web",
+      "ecommerce": "E-Commerce",
+      "webapp": "Application Web",
+      "landing": "Page de Destination"
+    },
+    "projects": {
+      "ecommerce_fashion": {
+        "title": "Boutique de Mode E-Commerce",
+        "category": "E-Commerce",
+        "description": "Boutique en ligne moderne pour marque de mode avec plus de 1000 produits, intégration de paiement et tableau de bord administrateur."
+      },
+      "saas_dashboard": {
+        "title": "Plateforme SaaS Dashboard",
+        "category": "Application Web",
+        "description": "Application web complexe pour la gestion de projets avec collaboration en temps réel et analytics."
+      },
+      "corporate_website": {
+        "title": "Refonte de Site Web d'Entreprise",
+        "category": "Site Web",
+        "description": "Refonte complète du site web d'entreprise avec design moderne et intégration CMS."
+      },
+      "landing_conversion": {
+        "title": "Landing Page Optimisée",
+        "category": "Page de Destination",
+        "description": "Page de destination à haute conversion pour le lancement de produit avec tests A/B et intégration analytics."
+      },
+      "restaurant_booking": {
+        "title": "Système de Réservation Restaurant",
+        "category": "Application Web",
+        "description": "Système de réservation en ligne avec gestion des tables, portail client et tableau de bord administrateur."
+      },
+      "tech_portfolio": {
+        "title": "Portfolio de Startup Tech",
+        "category": "Site Web",
+        "description": "Site web portfolio innovant pour startup tech avec sections animées et design moderne."
+      }
+    },
+    "metrics": {
+      "conversion": "Conversion",
+      "speed": "Vitesse",
+      "users": "Utilisateurs",
+      "uptime": "Disponibilité",
+      "features": "Fonctionnalités",
+      "traffic": "Trafic",
+      "bounce": "Rebond",
+      "seo": "SEO",
+      "leads": "Leads",
+      "ctr": "CTR",
+      "bookings": "Réservations",
+      "restaurants": "Restaurants",
+      "rating": "Note",
+      "awards": "Prix"
+    },
+    "empty": "Aucun projet trouvé dans cette catégorie.",
+    "stats": {
+      "title": "Des chiffres qui",
+      "titleHighlight": "convainquent",
+      "projects": {
+        "value": "50+",
+        "label": "Projets",
+        "description": "Réalisés avec succès"
+      },
+      "clients": {
+        "value": "30+",
+        "label": "Clients",
+        "description": "Clients satisfaits"
+      },
+      "years": {
+        "value": "5+",
+        "label": "Années",
+        "description": "D'expérience"
+      },
+      "quality": {
+        "value": "100%",
+        "label": "Qualité",
+        "description": "Notre exigence"
+      }
+    },
+    "cta": {
+      "title": "Votre projet pourrait être le prochain",
+      "description": "Créons ensemble quelque chose de formidable.",
+      "button": "Discuter du projet"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "💬 Parlons-en",
+      "title": "Contactez",
+      "titleHighlight": "nous",
+      "subtitle": "Parlez-nous de votre projet. Nous sommes impatients de travailler avec vous."
+    },
+    "info": {
+      "email": {
+        "title": "E-mail",
+        "value": "contact@digitalssolutions.com"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "value": "+49 179 6627473"
+      },
+      "address": {
+        "title": "Adresse",
+        "value": "Gummersbach, Allemagne"
+      },
+      "hours": {
+        "title": "Disponibilité",
+        "value": "Lun-Ven : 9h00 - 18h00"
+      }
+    },
+    "form": {
+      "title": "Envoyez-nous un",
+      "titleHighlight": "message",
+      "subtitle": "Remplissez le formulaire et nous vous répondrons dans les 24 heures.",
+      "successMessage": "Merci ! Votre message a été envoyé avec succès. Nous vous contacterons bientôt.",
+      "fields": {
+        "name": {
+          "label": "Nom",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "votre@email.fr"
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Votre entreprise"
+        },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "+33 1 23 45 67 89"
+        },
+        "service": {
+          "label": "Service souhaité",
+          "placeholder": "Veuillez sélectionner...",
+          "options": {
+            "website": "Site web moderne",
+            "landing": "Page de destination",
+            "webapp": "Application web",
+            "ecommerce": "E-Commerce",
+            "seo": "SEO & Performance",
+            "other": "Autre"
+          }
+        },
+        "budget": {
+          "label": "Budget",
+          "placeholder": "Veuillez sélectionner...",
+          "options": {
+            "1-3k": "1 000€ - 3 000€",
+            "3-5k": "3 000€ - 5 000€",
+            "5-10k": "5 000€ - 10 000€",
+            "10k+": "10 000€+"
+          }
+        },
+        "message": {
+          "label": "Votre message",
+          "placeholder": "Parlez-nous de votre projet..."
+        }
+      },
+      "submit": {
+        "idle": "Envoyer le message",
+        "submitting": "Envoi en cours..."
+      }
+    },
+    "consultation": {
+      "title": "Consultation initiale gratuite",
+      "description": "Lors d'un entretien sans engagement, nous analysons vos besoins et vous établissons une offre sur mesure.",
+      "benefits": {
+        "personal": {
+          "title": "Conseil personnalisé",
+          "description": "Adapté individuellement à vos besoins"
+        },
+        "transparent": {
+          "title": "Prix transparents",
+          "description": "Calcul clair des coûts sans frais cachés"
+        },
+        "fast": {
+          "title": "Réponse rapide",
+          "description": "Retour dans les 24 heures"
+        }
+      }
+    },
+    "callBox": {
+      "title": "Appeler directement ?",
+      "description": "Vous pouvez nous joindre par téléphone du lundi au vendredi entre 9h00 et 18h00."
+    },
+    "faq": {
+      "title": "Questions",
+      "titleHighlight": "fréquentes",
+      "items": {
+        "duration": {
+          "question": "Combien de temps dure le développement d'un site web ?",
+          "answer": "La durée dépend de l'ampleur du projet. Une page de destination peut être prête en 1 à 2 semaines, tandis que des applications web complexes peuvent nécessiter 2 à 3 mois."
+        },
+        "pricing": {
+          "question": "Quels sont les coûts ?",
+          "answer": "Nos prix varient selon l'ampleur du projet. Les pages de destination commencent à partir de 1 500€, les sites d'entreprise à partir de 2 500€ et les applications web à partir de 5 000€."
+        },
+        "support": {
+          "question": "Offrez-vous également la maintenance et le support ?",
+          "answer": "Oui, nous proposons des forfaits complets de maintenance et de support pour garder votre site web toujours à jour et sécurisé."
+        },
+        "international": {
+          "question": "Travaillez-vous également avec des clients internationaux ?",
+          "answer": "Absolument ! Nous travaillons avec des clients d'Allemagne, d'Europe et du monde entier. La communication se fait par vidéoconférence, e-mail et outils de gestion de projet."
+        }
+      }
+    }
+  }
+}

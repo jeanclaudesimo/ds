@@ -1,13 +1,20 @@
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Brand blue gradient -->
     <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:rgb(23, 67, 116);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgb(59, 130, 246);stop-opacity:1" />
+      <stop offset="0%" stop-color="rgb(23, 67, 116)" stop-opacity="1" />
+      <stop offset="100%" stop-color="rgb(59, 130, 246)" stop-opacity="1" />
     </linearGradient>
-  </defs>
 
-  <!-- Background -->
-  <rect width="100" height="100" fill="#000000"/>
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 
   <!-- Outer hexagon -->
   <path
@@ -15,17 +22,20 @@
     stroke="url(#brandGradient)"
     stroke-width="3"
     fill="none"
+    filter="url(#glow)"
   />
 
   <!-- Letter "D" -->
   <path
     d="M30 30 L30 70 L45 70 C55 70 60 65 60 50 C60 35 55 30 45 30 Z M35 35 L44 35 C52 35 55 38 55 50 C55 62 52 65 44 65 L35 65 Z"
     fill="url(#brandGradient)"
+    filter="url(#glow)"
   />
 
   <!-- Letter "S" -->
   <path
     d="M68 35 C68 32 70 30 73 30 L77 30 C80 30 82 32 82 35 C82 37 81 38 79 39 L70 43 C66 45 65 47 65 50 C65 54 67 56 71 56 L79 56 C83 56 85 54 85 50 L80 50 C80 52 79 53 77 53 L73 53 C71 53 70 52 70 50 C70 48 71 47 73 46 L82 42 C84 41 85 39 85 36 C85 32 83 27 77 27 L73 27 C67 27 65 32 65 35 Z"
     fill="url(#brandGradient)"
+    filter="url(#glow)"
   />
 </svg>

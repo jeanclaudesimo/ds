@@ -1,4 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from '@/i18n/routing';
+import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import Logo from "@/components/ui/Logo";
 import {
   FaLinkedinIn,
   FaTwitter,
@@ -8,25 +13,6 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-const footerLinks = {
-  services: [
-    { label: "Moderne Websites", href: "/services#websites" },
-    { label: "Landing Pages", href: "/services#landing-pages" },
-    { label: "Web Applikationen", href: "/services#web-apps" },
-    { label: "E-Commerce", href: "/services#ecommerce" },
-  ],
-  company: [
-    { label: "Über uns", href: "/about" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Kontakt", href: "/contact" },
-  ],
-  legal: [
-    { label: "Impressum", href: "/impressum" },
-    { label: "Datenschutz", href: "/datenschutz" },
-    { label: "AGB", href: "/agb" },
-  ],
-};
-
 const socialLinks = [
   { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/claude-simo-012580177", label: "LinkedIn" },
   { icon: FaTwitter, href: "#", label: "Twitter" },
@@ -34,7 +20,30 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] || 'de';
+  const t = useTranslations('footer');
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    services: [
+      { label: t('services.websites'), href: '/services#websites' },
+      { label: t('services.landing'), href: '/services#landing-pages' },
+      { label: t('services.webapps'), href: '/services#web-apps' },
+      { label: t('services.ecommerce'), href: '/services#ecommerce' },
+    ],
+    company: [
+      { label: t('company.about'), href: '/about' },
+      { label: t('company.portfolio'), href: '/portfolio' },
+      { label: t('company.contact'), href: '/contact' },
+      { label: t('company.logos'), href: '/logos' },
+    ],
+    legal: [
+      { label: t('legal.imprint'), href: '/impressum' },
+      { label: t('legal.privacy'), href: '/datenschutz' },
+      { label: t('legal.terms'), href: '/agb' },
+    ],
+  };
 
   return (
     <footer className="bg-black border-t border-zinc-800">
@@ -43,19 +52,22 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-2">
-                <span className="gradient-text">Digital</span>
-                <span className="text-white">Solutions</span>
-              </h3>
+              <div className="flex items-center space-x-3 mb-2">
+                <Logo size={36} />
+                <h3 className="text-2xl font-bold">
+                  <span className="gradient-text">Digital</span>
+                  <span className="text-white">Solutions</span>
+                </h3>
+              </div>
               <p className="text-gray-400 text-sm">
-                Ihr Partner für digitale Transformation und innovative Weblösungen.
+                {t('tagline')}
               </p>
             </div>
 
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <FaMapMarkerAlt className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                <span>Gummersbach, Deutschland</span>
+                <span>{t('location')}</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <FaEnvelope className="w-4 h-4 text-blue-500 flex-shrink-0" />
@@ -80,7 +92,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">{t('services.title')}</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -97,7 +109,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Unternehmen</h4>
+            <h4 className="text-white font-semibold mb-4">{t('company.title')}</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -114,7 +126,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Rechtliches</h4>
+            <h4 className="text-white font-semibold mb-4">{t('legal.title')}</h4>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
@@ -133,7 +145,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {currentYear} DigitalSolutions. Alle Rechte vorbehalten.
+            © {currentYear} DigitalSolutions. {t('copyright')}
           </p>
 
           {/* Social Links */}

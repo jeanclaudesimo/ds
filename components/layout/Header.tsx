@@ -1,22 +1,31 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
+import { usePathname } from "next/navigation";
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/cv", label: "Lebenslauf" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Kontakt" },
-];
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import Logo from "@/components/ui/Logo";
 
 export default function Header() {
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] || 'de';
+  const t = useTranslations('nav');
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Navigation links with translations
+  const navLinks = [
+    { href: "/", label: t('home') },
+    { href: "/cv", label: t('cv') },
+    { href: "/services", label: t('services') },
+    { href: "/portfolio", label: t('portfolio') },
+    { href: "/contact", label: t('contact') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,10 +48,17 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 z-10">
+          <Link href="/" className="flex items-center space-x-3 z-10 group">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-xl sm:text-2xl font-bold"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="transition-all"
+            >
+              <Logo size={42} className="group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] transition-all" />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="text-xl sm:text-2xl font-bold hidden sm:block"
             >
               <span className="gradient-text">Digital</span>
               <span className="text-white">Solutions</span>
@@ -63,15 +79,16 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          {/* Language Switcher & CTA - Desktop */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageSwitcher />
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-2.5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-shadow"
               >
-                Kostenlose Beratung
+                {t('cta')}
               </motion.button>
             </Link>
           </div>
@@ -110,9 +127,12 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
+                <div className="pt-2 pb-2 border-t border-zinc-700">
+                  <LanguageSwitcher />
+                </div>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="pt-2">
                   <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-medium shadow-lg shadow-blue-700/30">
-                    Kostenlose Beratung
+                    {t('cta')}
                   </button>
                 </Link>
               </div>

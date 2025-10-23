@@ -1,80 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import { FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
-
-const categories = ["Alle", "Website", "E-Commerce", "Web App", "Landing Page"];
-
-const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Fashion Store",
-    category: "E-Commerce",
-    description:
-      "Moderner Online-Shop für Fashion-Brand mit über 1000 Produkten, Payment-Integration und Admin-Dashboard.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    tags: ["Next.js", "Shopify", "Stripe"],
-    metrics: { conversion: "+45%", speed: "98/100", users: "50k+" },
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "SaaS Dashboard Platform",
-    category: "Web App",
-    description:
-      "Komplexe Web-Applikation für Projektmanagement mit Echtzeit-Collaboration und Analytics.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    metrics: { users: "10k+", uptime: "99.9%", features: "200+" },
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Corporate Website Redesign",
-    category: "Website",
-    description:
-      "Komplette Neugestaltung der Unternehmenswebsite mit modernem Design und CMS-Integration.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    tags: ["Next.js", "Tailwind", "Strapi"],
-    metrics: { traffic: "+120%", bounce: "-35%", seo: "95/100" },
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Conversion-Optimized Landing",
-    category: "Landing Page",
-    description:
-      "High-Converting Landing Page für Produkt-Launch mit A/B-Testing und Analytics-Integration.",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
-    tags: ["Next.js", "Framer Motion", "GA4"],
-    metrics: { conversion: "+85%", leads: "5k+", ctr: "12%" },
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Restaurant Booking System",
-    category: "Web App",
-    description:
-      "Online-Reservierungssystem mit Tischverwaltung, Kundenportal und Admin-Dashboard.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    tags: ["Laravel", "Vue.js", "MySQL"],
-    metrics: { bookings: "15k+", restaurants: "50+", rating: "4.8/5" },
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Tech Startup Portfolio",
-    category: "Website",
-    description:
-      "Innovative Portfolio-Website für Tech-Startup mit animierten Sections und modernem Design.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
-    tags: ["Next.js", "Three.js", "Tailwind"],
-    metrics: { awards: "3", speed: "100/100", bounce: "-50%" },
-    link: "#",
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -94,10 +24,76 @@ const itemVariants = {
 };
 
 export default function PortfolioPage() {
-  const [activeCategory, setActiveCategory] = useState("Alle");
+  const t = useTranslations('portfolio');
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const categories = [
+    { key: "all", label: t('categories.all') },
+    { key: "website", label: t('categories.website') },
+    { key: "ecommerce", label: t('categories.ecommerce') },
+    { key: "webapp", label: t('categories.webapp') },
+    { key: "landing", label: t('categories.landing') },
+  ];
+
+  const projects = [
+    {
+      id: 1,
+      key: "ecommerce_fashion",
+      category: "ecommerce",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      tags: ["Next.js", "Shopify", "Stripe"],
+      metrics: { conversion: "+45%", speed: "98/100", users: "50k+" },
+      link: "#",
+    },
+    {
+      id: 2,
+      key: "saas_dashboard",
+      category: "webapp",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      tags: ["React", "Node.js", "PostgreSQL"],
+      metrics: { users: "10k+", uptime: "99.9%", features: "200+" },
+      link: "#",
+    },
+    {
+      id: 3,
+      key: "corporate_website",
+      category: "website",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      tags: ["Next.js", "Tailwind", "Strapi"],
+      metrics: { traffic: "+120%", bounce: "-35%", seo: "95/100" },
+      link: "#",
+    },
+    {
+      id: 4,
+      key: "landing_conversion",
+      category: "landing",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
+      tags: ["Next.js", "Framer Motion", "GA4"],
+      metrics: { conversion: "+85%", leads: "5k+", ctr: "12%" },
+      link: "#",
+    },
+    {
+      id: 5,
+      key: "restaurant_booking",
+      category: "webapp",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+      tags: ["Laravel", "Vue.js", "MySQL"],
+      metrics: { bookings: "15k+", restaurants: "50+", rating: "4.8/5" },
+      link: "#",
+    },
+    {
+      id: 6,
+      key: "tech_portfolio",
+      category: "website",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      tags: ["Next.js", "Three.js", "Tailwind"],
+      metrics: { awards: "3", speed: "100/100", bounce: "-50%" },
+      link: "#",
+    },
+  ];
 
   const filteredProjects =
-    activeCategory === "Alle"
+    activeCategory === "all"
       ? projects
       : projects.filter((p) => p.category === activeCategory);
 
@@ -123,17 +119,16 @@ export default function PortfolioPage() {
               className="inline-block mb-6 px-6 py-2 bg-gradient-to-r from-blue-700/10 to-blue-400/10 border border-blue-500/20 rounded-full"
             >
               <span className="text-blue-400 font-medium">
-                💼 Erfolgreiche Projekte
+                {t('hero.badge')}
               </span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Unser <span className="gradient-text">Portfolio</span>
+              {t('hero.title')} <span className="gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-              Überzeugen Sie sich von unserer Arbeit - eine Auswahl unserer
-              erfolgreichsten Projekte.
+              {t('hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -149,17 +144,17 @@ export default function PortfolioPage() {
           >
             {categories.map((category) => (
               <motion.button
-                key={category}
+                key={category.key}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => setActiveCategory(category.key)}
                 className={`px-6 py-2.5 rounded-lg font-medium transition-all ${
-                  activeCategory === category
+                  activeCategory === category.key
                     ? "bg-gradient-to-r from-blue-700 to-blue-400 text-white shadow-lg shadow-blue-500/50"
                     : "bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800"
                 }`}
               >
-                {category}
+                {category.label}
               </motion.button>
             ))}
           </motion.div>
@@ -187,7 +182,7 @@ export default function PortfolioPage() {
                 <div className="relative h-64 overflow-hidden bg-zinc-900">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={t(`projects.${project.key}.title`)}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
@@ -195,7 +190,7 @@ export default function PortfolioPage() {
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-400 text-xs font-semibold rounded-full">
-                      {project.category}
+                      {t(`projects.${project.key}.category`)}
                     </span>
                   </div>
 
@@ -211,10 +206,10 @@ export default function PortfolioPage() {
                 {/* Project Info */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
-                    {project.title}
+                    {t(`projects.${project.key}.title`)}
                   </h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    {project.description}
+                    {t(`projects.${project.key}.description`)}
                   </p>
 
                   {/* Tags */}
@@ -237,7 +232,7 @@ export default function PortfolioPage() {
                           {value}
                         </div>
                         <div className="text-gray-500 text-xs capitalize">
-                          {key}
+                          {t(`metrics.${key}`)}
                         </div>
                       </div>
                     ))}
@@ -255,7 +250,7 @@ export default function PortfolioPage() {
               className="text-center py-20"
             >
               <p className="text-gray-400 text-lg">
-                Keine Projekte in dieser Kategorie gefunden.
+                {t('empty')}
               </p>
             </motion.div>
           )}
@@ -276,7 +271,7 @@ export default function PortfolioPage() {
               variants={itemVariants}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Zahlen die <span className="gradient-text">überzeugen</span>
+              {t('stats.title')} <span className="gradient-text">{t('stats.titleHighlight')}</span>
             </motion.h2>
           </motion.div>
 
@@ -287,22 +282,21 @@ export default function PortfolioPage() {
             variants={containerVariants}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
-            {[
-              { value: "50+", label: "Projekte", description: "Erfolgreich abgeschlossen" },
-              { value: "30+", label: "Kunden", description: "Zufriedene Auftraggeber" },
-              { value: "5+", label: "Jahre", description: "Erfahrung im Markt" },
-              { value: "100%", label: "Qualität", description: "Unser Anspruch" },
-            ].map((stat, index) => (
+            {['projects', 'clients', 'years', 'quality'].map((stat) => (
               <motion.div
-                key={index}
+                key={stat}
                 variants={itemVariants}
                 className="text-center p-6 bg-zinc-900 rounded-xl border border-zinc-800"
               >
                 <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-                  {stat.value}
+                  {t(`stats.${stat}.value`)}
                 </div>
-                <div className="text-white font-semibold mb-1">{stat.label}</div>
-                <div className="text-gray-400 text-sm">{stat.description}</div>
+                <div className="text-white font-semibold mb-1">
+                  {t(`stats.${stat}.label`)}
+                </div>
+                <div className="text-gray-400 text-sm">
+                  {t(`stats.${stat}.description`)}
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -323,10 +317,10 @@ export default function PortfolioPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ihr Projekt könnte das nächste sein
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-gray-400 mb-12">
-              Lassen Sie uns gemeinsam etwas Großartiges schaffen.
+              {t('cta.description')}
             </p>
             <Link href="/contact">
               <motion.button
@@ -334,7 +328,7 @@ export default function PortfolioPage() {
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-400 rounded-lg text-white font-bold text-xl hover:shadow-lg hover:shadow-blue-500/50 transition-shadow inline-flex items-center gap-3"
               >
-                Projekt besprechen
+                {t('cta.button')}
                 <FaArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>
