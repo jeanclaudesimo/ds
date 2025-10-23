@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Laravel",
   ],
   openGraph: {
-    title: "Services | DigitalSolutions",
+    title: "Services | Digitalssolutions",
     description:
       "Professionelle Webentwicklung, Landing Pages, Web-Applikationen und mehr.",
   },

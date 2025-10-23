@@ -127,7 +127,7 @@ export default function DatenschutzPage() {
                 <br />
                 Claude Simo
                 <br />
-                DigitalSolutions
+                Digitalssolutions
                 <br />
                 Gummersbach, Deutschland
                 <br />

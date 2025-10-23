@@ -23,7 +23,7 @@ export default function AGBPage() {
               </h2>
               <p className="mb-4">
                 Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-                Verträge über Dienstleistungen, die zwischen DigitalSolutions
+                Verträge über Dienstleistungen, die zwischen Digitalssolutions
                 (Claude Simo) und dem Auftraggeber geschlossen werden.
               </p>
               <p className="mb-4">
@@ -135,12 +135,12 @@ export default function AGBPage() {
               </h2>
               <p className="mb-4">
                 Alle Urheberrechte an den erstellten Werken verbleiben bei
-                DigitalSolutions, bis die vollständige Bezahlung erfolgt ist.
+                Digitalssolutions, bis die vollständige Bezahlung erfolgt ist.
                 Nach vollständiger Bezahlung erhält der Auftraggeber ein
                 zeitlich und räumlich unbegrenztes Nutzungsrecht.
               </p>
               <p className="mb-4">
-                DigitalSolutions behält sich das Recht vor, die erstellten
+                Digitalssolutions behält sich das Recht vor, die erstellten
                 Arbeiten zu Referenzzwecken zu verwenden.
               </p>
             </section>

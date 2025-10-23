@@ -48,7 +48,7 @@ const team = [
 ];
 
 const milestones = [
-  { year: "2019", title: "Gründung", description: "Start von DigitalSolutions in Gummersbach" },
+  { year: "2019", title: "Gründung", description: "Start von Digitalssolutions in Gummersbach" },
   { year: "2020", title: "10 Kunden", description: "Erste erfolgreiche Projekte im Portfolio" },
   { year: "2021", title: "Team-Wachstum", description: "Erweiterung auf 5 Teammitglieder" },
   { year: "2022", title: "25+ Projekte", description: "Erfolgreich abgeschlossene Projekte" },
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Wir sind{" "}
-              <span className="gradient-text">DigitalSolutions</span>
+              <span className="gradient-text">Digitalssolutions</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
@@ -162,7 +162,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-400">
                 <p>
                   Als Full-Stack PHP Developer und DevOps Engineer habe ich
-                  DigitalSolutions 2019 gegründet, um Unternehmen durch
+                  Digitalssolutions 2019 gegründet, um Unternehmen durch
                   innovative digitale Lösungen zum Erfolg zu verhelfen. Mit
                   einer Leidenschaft für sauberen Code und effiziente Systeme
                   entwickle ich maßgeschneiderte Weblösungen.
@@ -315,7 +315,7 @@ export default function AboutPage() {
               variants={itemVariants}
               className="text-xl text-gray-400 max-w-2xl mx-auto"
             >
-              Lernen Sie mich kennen - Claude Simo, Gründer von DigitalSolutions
+              Lernen Sie mich kennen - Claude Simo, Gründer von Digitalssolutions
             </motion.p>
           </motion.div>
 

@@ -20,7 +20,7 @@ export default function ImpressumPage() {
                 Angaben gemäß § 5 TMG
               </h2>
               <p className="mb-2">
-                <strong>DigitalSolutions</strong>
+                <strong>Digitalssolutions</strong>
                 <br />
                 Claude Simo
                 <br />

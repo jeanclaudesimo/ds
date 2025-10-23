@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "DigitalSolutions - Claude Simo",
-    short_name: "DigitalSolutions",
+    name: "Digitalssolutions - Claude Simo",
+    short_name: "Digitalssolutions",
     description:
       "Professionelle Webentwicklung, Landing Pages und Web-Applikationen.",
     start_url: "/",
