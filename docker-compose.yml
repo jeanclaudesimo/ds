@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: ds
     ports:
-      - "3001:3000"
+      - "3001:3000"            # container listens on 3000
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
@@ -16,39 +16,31 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
 
-      # --- Service ---
+      # Service points to container port 3000 (NOT 3001 which is the host mapping)
       - "traefik.http.services.ds.loadbalancer.server.port=3000"
 
       # --- Middlewares ---
-      # Force HTTPS dans les requêtes internes
       - "traefik.http.middlewares.ds-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
 
-      # Redirection domaine nu -> www
+      # Redirect apex -> www
       - "traefik.http.middlewares.redirect-to-www.redirectregex.regex=^https?://digitalssolutions\\.de(.*)"
       - "traefik.http.middlewares.redirect-to-www.redirectregex.replacement=https://www.digitalssolutions.de$1"
       - "traefik.http.middlewares.redirect-to-www.redirectregex.permanent=true"
 
       # --- Routers ---
-      # Router principal pour www.digitalssolutions.de (sert le site)
+      # Serve the site on www.digitalssolutions.de
       - "traefik.http.routers.ds-www.entrypoints=frontendsecure"
       - "traefik.http.routers.ds-www.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds-www.tls=true"
       - "traefik.http.routers.ds-www.service=ds"
       - "traefik.http.routers.ds-www.middlewares=ds-headers"
 
-      # Router pour le domaine nu digitalssolutions.de (redirige vers www)
+      # Redirect the bare domain to www (fixed host spelling)
       - "traefik.http.routers.ds-root.entrypoints=frontendsecure"
-      - "traefik.http.routers.ds-root.rule=Host(`digitalsssolutions.de`)"
+      - "traefik.http.routers.ds-root.rule=Host(`digitalssolutions.de`)"
       - "traefik.http.routers.ds-root.tls=true"
       - "traefik.http.routers.ds-root.middlewares=redirect-to-www"
       - "traefik.http.routers.ds-root.service=noop@internal"
-
-      # (Optionnel) redirection HTTP → HTTPS globale
-      # - "traefik.http.routers.http-catchall.rule=HostRegexp(`{host:.+}`)"
-      # - "traefik.http.routers.http-catchall.entrypoints=frontend"
-      # - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
-      # - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
 
 networks:
   traefik-net:
