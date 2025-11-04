@@ -24,7 +24,7 @@ services:
 
       # Redirection apex -> www (NOM UNIQUE)
       - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.regex=^https?://digitalssolutions\\.de(.*)"
-      - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.replacement=https://www.digitalssolutions.de$1"
+      - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.regex=^https?://(www\\.)?digitalssolutions\\.de(/.*)?$"
       - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.permanent=true"
 
       # --- Routers ---
