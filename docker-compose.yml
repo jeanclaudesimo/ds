@@ -1,14 +1,15 @@
 services:
-  ds:
+  tagakam:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ds
+    container_name: tagakam
     ports:
-      - "3001:3000"   # le conteneur écoute 3000
+      - "3004:3004"   # le conteneur écoute maintenant sur 3004
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
+      - NUXT_PUBLIC_API_BASE=http://portal.digitalssolutions.de/api
     restart: unless-stopped
     networks:
       - traefik-net
@@ -16,32 +17,31 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
 
-      # Service -> port INTERNE (3000)
-      - "traefik.http.services.ds.loadbalancer.server.port=3001"
+      # Service -> port INTERNE (3004)
+      - "traefik.http.services.tagakam-xix29f-54.loadbalancer.server.port=3004"
 
       # --- Middlewares ---
-      - "traefik.http.middlewares.ds-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.tagakam-xix29f-54-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
 
-      # Redirection apex -> www (UNIQUEMENT digitalssolutions.de, pas les sous-domaines)
-      - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.regex=^https?://digitalssolutions\\.de(/.*)?$"
-      - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.replacement=https://www.digitalssolutions.de$1"
-      - "traefik.http.middlewares.ds-redirect-to-www.redirectregex.permanent=true"
+      # Redirection apex -> www
+      - "traefik.http.middlewares.tagakam-xix29f-54-redirect-to-www.redirectregex.regex=^https?://tagakam\\.de(/.*)?$"
+      - "traefik.http.middlewares.tagakam-xix29f-54-redirect-to-www.redirectregex.replacement=https://www.tagakam.de$1"
+      - "traefik.http.middlewares.tagakam-xix29f-54-redirect-to-www.redirectregex.permanent=true"
 
       # --- Routers ---
-
       # www -> sert le site
-      - "traefik.http.routers.ds-www.entrypoints=frontendsecure"
-      - "traefik.http.routers.ds-www.rule=Host(`www.digitalssolutions.de`)"
-      - "traefik.http.routers.ds-www.tls=true"
-      - "traefik.http.routers.ds-www.service=ds"
-      - "traefik.http.routers.ds-www.middlewares=ds-headers"
+      - "traefik.http.routers.tagakam-xix29f-54-www.entrypoints=frontendsecure"
+      - "traefik.http.routers.tagakam-xix29f-54-www.rule=Host(`www.tagakam.de`)"
+      - "traefik.http.routers.tagakam-xix29f-54-www.tls=true"
+      - "traefik.http.routers.tagakam-xix29f-54-www.service=tagakam-xix29f-54"
+      - "traefik.http.routers.tagakam-xix29f-54-www.middlewares=tagakam-xix29f-54-headers"
 
       # apex -> applique la redirection (vers www)
-      - "traefik.http.routers.ds-root.entrypoints=frontendsecure"
-      - "traefik.http.routers.ds-root.rule=Host(`digitalssolutions.de`)"
-      - "traefik.http.routers.ds-root.tls=true"
-      - "traefik.http.routers.ds-root.middlewares=ds-redirect-to-www@docker"
-      - "traefik.http.routers.ds-root.service=noop@internal"
+      - "traefik.http.routers.tagakam-xix29f-54-root.entrypoints=frontendsecure"
+      - "traefik.http.routers.tagakam-xix29f-54-root.rule=Host(`tagakam.de`)"
+      - "traefik.http.routers.tagakam-xix29f-54-root.tls=true"
+      - "traefik.http.routers.tagakam-xix29f-54-root.middlewares=tagakam-xix29f-54-redirect-to-www@docker"
+      - "traefik.http.routers.tagakam-xix29f-54-root.service=noop@internal"
 
 networks:
   traefik-net:
