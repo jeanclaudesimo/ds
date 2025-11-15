@@ -37,7 +37,6 @@ services:
       - "traefik.http.routers.ds.entrypoints=frontendsecure"
       - "traefik.http.routers.ds.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds.tls=true"
-      - "traefik.http.routers.ds.service=ds"
 
 networks:
   traefik-net:
