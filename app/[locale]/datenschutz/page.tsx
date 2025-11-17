@@ -134,7 +134,7 @@ export default function DatenschutzPage() {
                 <br />
                 Telefon: +49 179 6627473
                 <br />
-                E-Mail: contact@digitalssolutions.com
+                E-Mail: contact@digitalssolutions.de
               </p>
 
               <h3 className="text-xl font-semibold mb-2 text-white mt-4">
