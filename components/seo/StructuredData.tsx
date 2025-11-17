@@ -9,7 +9,7 @@ export default function StructuredData() {
     logo: "https://digitalssolutions.de/favicon.svg",
     description:
       "Professionelle Webentwicklung, Landing Pages und Web-Applikationen. Spezialisiert auf PHP, Laravel, Symfony, React und Next.js.",
-    email: "contact@digitalssolutions.com",
+    email: "contact@digitalssolutions.de",
     telephone: "+491796627473",
     address: {
       "@type": "PostalAddress",
@@ -87,7 +87,7 @@ export default function StructuredData() {
     jobTitle: "Full-Stack Developer & DevOps Engineer",
     url: "https://digitalssolutions.de",
     image: "https://digitalssolutions.de/favicon.svg",
-    email: "contact@digitalssolutions.com",
+    email: "contact@digitalssolutions.de",
     telephone: "+491796627473",
     address: {
       "@type": "PostalAddress",
