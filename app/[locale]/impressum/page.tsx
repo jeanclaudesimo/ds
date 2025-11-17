@@ -44,7 +44,7 @@ export default function ImpressumPage() {
                   href="mailto:contact@digitalssolutions.de"
                   className="text-blue-400 hover:text-blue-300"
                 >
-                  contact@digitalssolutions.com
+                  contact@digitalssolutions.de
                 </a>
               </p>
             </section>
