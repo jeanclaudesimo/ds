@@ -122,10 +122,10 @@ export default function CVPage() {
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
                     <FaEnvelope className="w-4 h-4 text-blue-500 flex-shrink-0" />
                     <a
-                      href="mailto:contact@digitalssolutions.com"
+                      href="mailto:contact@digitalssolutions.de"
                       className="hover:text-white transition-colors"
                     >
-                      contact@digitalssolutions.com
+                      contact@digitalssolutions.de
                     </a>
                   </div>
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
