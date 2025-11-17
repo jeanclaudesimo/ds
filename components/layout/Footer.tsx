@@ -55,7 +55,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3 mb-2">
                 <Logo size={36} />
                 <h3 className="text-2xl font-bold">
-                  <span className="gradient-text">Digital</span>
+                  <span className="gradient-text">Digitals</span>
                   <span className="text-white">Solutions</span>
                 </h3>
               </div>
@@ -75,7 +75,7 @@ export default function Footer() {
                   href="mailto:contact@digitalssolutions.com"
                   className="hover:text-white transition-colors"
                 >
-                  contact@digitalssolutions.com
+                  contact@digitalssolutions.de
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
@@ -145,7 +145,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {currentYear} DigitalSolutions. {t('copyright')}
+            © {currentYear} DigitalsSolutions. {t('copyright')}
           </p>
 
           {/* Social Links */}
