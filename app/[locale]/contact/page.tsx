@@ -48,7 +48,7 @@ export default function ContactPage() {
       icon: FaEnvelope,
       title: t('info.email.title'),
       value: t('info.email.value'),
-      link: "mailto:contact@digitalssolutions.com",
+      link: "mailto:contact@digitalssolutions.de",
     },
     {
       icon: FaPhone,
