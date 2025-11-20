@@ -416,6 +416,26 @@
         "title": "Tech Startup Portfolio",
         "category": "Website",
         "description": "Innovative Portfolio-Website für Tech-Startup mit animierten Sections und modernem Design."
+      },
+      "tagakam": {
+        "title": "TaGaKaM&Co Business Services",
+        "category": "Website",
+        "description": "Professionelle Business-Service-Website für Fahrzeugzulassung, Transport, Reisebuchung und Immobiliendienstleistungen in Köln."
+      },
+      "ondiffoline": {
+        "title": "Ondiffoline Reinigungsdienste",
+        "category": "Website",
+        "description": "Professionelle Website für Reinigungsdienstleistungen mit umfassendem Service-Portfolio für Gewerbe, Gastronomie und Privatkunden."
+      },
+      "winterdienst_nes24": {
+        "title": "NES24 Winterdienst Köln",
+        "category": "Website",
+        "description": "Professionelle Winterdienst-Website mit 24/7-Service für Schneeräumung und Streudienste in Köln mit 20 Jahren Erfahrung."
+      },
+      "michelclean": {
+        "title": "MichelClean Köln",
+        "category": "Website",
+        "description": "Moderne Reinigungsdienst-Website mit 24/7-Verfügbarkeit für Büro-, Haushalts- und Gastronomie-Reinigung in Köln und Umgebung."
       }
     },
     "metrics": {
@@ -432,7 +452,14 @@
       "bookings": "Bookings",
       "restaurants": "Restaurants",
       "rating": "Rating",
-      "awards": "Awards"
+      "awards": "Awards",
+      "services": "Services",
+      "clients": "Kunden",
+      "satisfaction": "Zufriedenheit",
+      "reviews": "Bewertungen",
+      "years": "Jahre",
+      "coverage": "Verfügbarkeit",
+      "protection": "Haftungsschutz"
     },
     "empty": "Keine Projekte in dieser Kategorie gefunden.",
     "stats": {

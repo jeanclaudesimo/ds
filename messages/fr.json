@@ -416,6 +416,26 @@
         "title": "Portfolio de Startup Tech",
         "category": "Site Web",
         "description": "Site web portfolio innovant pour startup tech avec sections animées et design moderne."
+      },
+      "tagakam": {
+        "title": "TaGaKaM&Co Services aux Entreprises",
+        "category": "Site Web",
+        "description": "Site web professionnel de services aux entreprises pour immatriculation de véhicules, transport, réservation de voyages et services immobiliers à Cologne."
+      },
+      "ondiffoline": {
+        "title": "Ondiffoline Services de Nettoyage",
+        "category": "Site Web",
+        "description": "Site web professionnel pour services de nettoyage avec portfolio complet de services pour entreprises, restaurants et clients privés."
+      },
+      "winterdienst_nes24": {
+        "title": "NES24 Service de Déneigement Cologne",
+        "category": "Site Web",
+        "description": "Site web professionnel de service de déneigement avec disponibilité 24/7 pour le déneigement et le salage à Cologne avec 20 ans d'expérience."
+      },
+      "michelclean": {
+        "title": "MichelClean Cologne",
+        "category": "Site Web",
+        "description": "Site web moderne de services de nettoyage avec disponibilité 24/7 pour le nettoyage de bureaux, domiciles et restaurants à Cologne et environs."
       }
     },
     "metrics": {
@@ -432,7 +452,14 @@
       "bookings": "Réservations",
       "restaurants": "Restaurants",
       "rating": "Note",
-      "awards": "Prix"
+      "awards": "Prix",
+      "services": "Services",
+      "clients": "Clients",
+      "satisfaction": "Satisfaction",
+      "reviews": "Avis",
+      "years": "Années",
+      "coverage": "Disponibilité",
+      "protection": "Protection"
     },
     "empty": "Aucun projet trouvé dans cette catégorie.",
     "stats": {

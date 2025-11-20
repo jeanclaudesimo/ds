@@ -9,6 +9,7 @@ services:
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
+      - TENANT_API_KEY=${TENANT_API_KEY}
     restart: unless-stopped
     networks:
       - traefik-net

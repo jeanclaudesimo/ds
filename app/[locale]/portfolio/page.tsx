@@ -90,6 +90,42 @@ export default function PortfolioPage() {
       metrics: { awards: "3", speed: "100/100", bounce: "-50%" },
       link: "#",
     },
+    {
+      id: 7,
+      key: "tagakam",
+      category: "website",
+      image: "/images/tagakam.png",
+      tags: ["HTML5", "Tailwind CSS", "Responsive"],
+      metrics: { services: "5+", clients: "100+", satisfaction: "4.9/5" },
+      link: "https://www.tagakam.de/",
+    },
+    {
+      id: 8,
+      key: "ondiffoline",
+      category: "website",
+      image: "/images/ondiffoline.png",
+      tags: ["HTML5", "CSS3", "Responsive"],
+      metrics: { services: "10+", rating: "5.0/5", reviews: "12+" },
+      link: "https://www.ondiffoline.de/",
+    },
+    {
+      id: 9,
+      key: "winterdienst_nes24",
+      category: "website",
+      image: "/images/winterdienst-nes24.png",
+      tags: ["HTML5", "CSS3", "Responsive"],
+      metrics: { years: "20+", coverage: "24/7", protection: "100%" },
+      link: "https://winterdienst-nes24.de/",
+    },
+    {
+      id: 10,
+      key: "michelclean",
+      category: "website",
+      image: "/images/michelclean.png",
+      tags: ["HTML5", "CSS3", "Responsive"],
+      metrics: { clients: "500+", coverage: "24/7", satisfaction: "100%" },
+      link: "https://www.michelclean.de/",
+    },
   ];
 
   const filteredProjects =
