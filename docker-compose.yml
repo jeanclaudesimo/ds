@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: ds
     ports:
-      - "3001:3000"   # le conteneur écoute 3000
+      - "3001:3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
@@ -16,26 +16,20 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
 
-      - "traefik.http.services.ours-ds.loadbalancer.server.port=3001"
-    
-      # HTTP (Port 80) → Redirect auf HTTPS
-      - "traefik.http.routers.ds-http.entrypoints=frontendsecure"
-      - "traefik.http.routers.ds-http.rule=Host(`www.digitalssolutions.de`)"
-      - "traefik.http.routers.ds-http.middlewares=ds-https"
-      
-      - "traefik.http.middlewares.ds-https.redirectscheme.scheme=https"
-    
-      # Redirect ds.de → www.ds.de
+      # Service-Port IMMER Port IM CONTAINER → 3000, NICHT 3001
+      - "traefik.http.services.ds.loadbalancer.server.port=3000"
+
+      # Weiterleitung "digitalssolutions.de" → "www.digitalssolutions.de"
       - "traefik.http.routers.ds-root.entrypoints=frontendsecure"
       - "traefik.http.routers.ds-root.rule=Host(`digitalssolutions.de`)"
-      - "traefik.http.routers.ds-root.middlewares=ds-www-redirect"
       - "traefik.http.routers.ds-root.tls=true"
-    
+      - "traefik.http.routers.ds-root.middlewares=ds-www-redirect"
+
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.regex=^https?://digitalssolutions\\.de(.*)"
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.replacement=https://www.digitalssolutions.de$1"
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.permanent=true"
-    
-      # HTTPS Router
+
+      # Normaler HTTPS-Router für die www-Domain
       - "traefik.http.routers.ds.entrypoints=frontendsecure"
       - "traefik.http.routers.ds.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds.tls=true"
