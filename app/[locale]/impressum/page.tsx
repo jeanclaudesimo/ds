@@ -58,7 +58,7 @@ export default function ImpressumPage() {
                 Umsatzsteuergesetz:
                 <br />
                 <em className="text-gray-400">
-                  [Bitte Ihre USt-IdNr. eintragen]
+                  212/5233/3978
                 </em>
               </p>
             </section>
