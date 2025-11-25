@@ -16,26 +16,29 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
-
-      # Service-Port IMMER Port IM CONTAINER → 3000, NICHT 3001
-      - "traefik.http.services.ds.loadbalancer.server.port=3001"
-
-      # Weiterleitung "digitalssolutions.de" → "www.digitalssolutions.de"
+    
+      # HTTP (Port 80) → Redirect auf HTTPS
+      - "traefik.http.routers.ds-http.entrypoints=frontendsecure"
+      - "traefik.http.routers.ds-http.rule=Host(`www.digitalssolutions.de`)"
+      - "traefik.http.routers.ds-http.middlewares=ds-https"
+      
+      - "traefik.http.middlewares.ds-https.redirectscheme.scheme=https"
+    
+      # Redirect tagakam.de → www.ds.de
       - "traefik.http.routers.ds-root.entrypoints=frontendsecure"
       - "traefik.http.routers.ds-root.rule=Host(`digitalssolutions.de`)"
-      - "traefik.http.routers.ds-root.tls=true"
       - "traefik.http.routers.ds-root.middlewares=ds-www-redirect"
-
+      - "traefik.http.routers.ds-root.tls=true"
+    
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.regex=^https?://digitalssolutions\\.de(.*)"
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.replacement=https://www.digitalssolutions.de$1"
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.permanent=true"
-
-      # Normaler HTTPS-Router für die www-Domain
+    
+      # HTTPS Router
       - "traefik.http.routers.ds.entrypoints=frontendsecure"
       - "traefik.http.routers.ds.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds.tls=true"
       - "traefik.http.routers.ds.tls.certresolver=leresolver"
-
 networks:
   traefik-net:
     external: true
