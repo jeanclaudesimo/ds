@@ -17,30 +17,43 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
 
-      - "traefik.http.services.ds.loadbalancer.server.port=3001"
-    
-      # HTTP (Port 80) → Redirect auf HTTPS
+      # Service definition (interner Port im Container)
+      - "traefik.http.services.ds.loadbalancer.server.port=3000"
+
+      # HTTP (Port 80) www.digitalssolutions.de → Redirect auf HTTPS
       - "traefik.http.routers.ds-http.entrypoints=frontendsecure"
       - "traefik.http.routers.ds-http.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds-http.middlewares=ds-https"
-      
+      - "traefik.http.routers.ds-http.service=ds"
+
       - "traefik.http.middlewares.ds-https.redirectscheme.scheme=https"
-    
-      # Redirect tagakam.de → www.ds.de
+      - "traefik.http.middlewares.ds-https.redirectscheme.permanent=true"
+
+      # HTTP Redirect für digitalssolutions.de → https://www.digitalssolutions.de
+      - "traefik.http.routers.ds-root-http.entrypoints=frontendsecure"
+      - "traefik.http.routers.ds-root-http.rule=Host(`digitalssolutions.de`)"
+      - "traefik.http.routers.ds-root-http.middlewares=ds-www-redirect"
+      - "traefik.http.routers.ds-root-http.service=ds"
+
+      # HTTPS Redirect digitalssolutions.de → www.digitalssolutions.de (nur naked domain)
       - "traefik.http.routers.ds-root.entrypoints=frontendsecure"
       - "traefik.http.routers.ds-root.rule=Host(`digitalssolutions.de`)"
       - "traefik.http.routers.ds-root.middlewares=ds-www-redirect"
       - "traefik.http.routers.ds-root.tls=true"
-    
+      - "traefik.http.routers.ds-root.tls.certresolver=leresolver"
+      - "traefik.http.routers.ds-root.service=ds"
+
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.regex=^https?://digitalssolutions\\.de(.*)"
-      - "traefik.http.middlewares.ds-www-redirect.redirectregex.replacement=https://www.digitalssolutions.de$1"
+      - "traefik.http.middlewares.ds-www-redirect.redirectregex.replacement=https://www.digitalssolutions.de$${1}"
       - "traefik.http.middlewares.ds-www-redirect.redirectregex.permanent=true"
-    
-      # HTTPS Router
+
+      # HTTPS Router für www.digitalssolutions.de
       - "traefik.http.routers.ds.entrypoints=frontendsecure"
       - "traefik.http.routers.ds.rule=Host(`www.digitalssolutions.de`)"
       - "traefik.http.routers.ds.tls=true"
       - "traefik.http.routers.ds.tls.certresolver=leresolver"
+      - "traefik.http.routers.ds.service=ds"
+
 networks:
   traefik-net:
     external: true
