@@ -18,7 +18,7 @@ services:
       - "traefik.docker.network=traefik-net"
 
       # Service definition (interner Port im Container)
-      - "traefik.http.services.ds.loadbalancer.server.port=3000"
+      - "traefik.http.services.ds.loadbalancer.server.port=3001"
 
       # HTTP (Port 80) www.digitalssolutions.de → Redirect auf HTTPS
       - "traefik.http.routers.ds-http.entrypoints=frontendsecure"
